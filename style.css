@@ -13,6 +13,8 @@
     --selected-bg: #e8f5e9;
     --controls-top: 75px;
     --control-border-width: 2px;
+    --control-font-size: 16px;
+    --control-font-weight: 500;
 }
 
 .dark-mode {
@@ -125,6 +127,11 @@ h2 {
     opacity: 1;
 }
 
+.controls-content button {
+    font-size: var(--control-font-size);
+    font-weight: var(--control-font-weight);
+}
+
 .controls.collapsed .controls-content {
     display: none;
     opacity: 0;
@@ -186,6 +193,8 @@ h2 {
     color: var(--button-text);
     width: 100%;
     box-sizing: border-box;
+    font-size: var(--control-font-size);
+    font-weight: var(--control-font-weight);
 }
 
 .search-input:focus {
