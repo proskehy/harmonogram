@@ -95,6 +95,15 @@ function App() {
   const toggleBandSelection = (bandId) => {
     const idStr = bandId.toString();
     if (ids.includes(idStr)) {
+      if (show === "selected") {
+        if (
+          !window.confirm(
+            "Are you sure you want to remove this band from your selection?",
+          )
+        ) {
+          return;
+        }
+      }
       setIds(ids.filter((id) => id !== idStr));
     } else {
       setIds([...ids, idStr]);
@@ -108,6 +117,7 @@ function App() {
       .includes(search.toLowerCase());
 
     if (!matchesSearch) return false;
+    if (band.active === false) return false;
 
     if (show === "selected") {
       return isSelected;
@@ -204,12 +214,12 @@ function App() {
                 : "var(--card-bg)"};"
             >
               <strong>${band.bandName}</strong>
-              ${isSelected ? html`<span> ✅</span>` : ""}
               ${conflict
                 ? html`<span
                     style="color: #f44336; font-size: 0.8em; margin-left: 10px;"
                   >
-                    ⚠️ Conflict: ${conflictingBands
+                    ⚠️ Conflict:
+                    ${conflictingBands
                       .map((other) => {
                         const range = getTimeRange(band);
                         const otherRange = getTimeRange(other);
