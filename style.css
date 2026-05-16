@@ -97,7 +97,7 @@ h2 {
     height: 50px;
     padding: 0;
     top: calc(var(--control-border-width) + 20px);
-    right: calc(var(--control-border-width) + 22px);
+    right: calc(var(--control-border-width) + 23px);
     bottom: auto;
     overflow: hidden;
     justify-content: center;
@@ -154,7 +154,7 @@ h2 {
 .collapse-toggle.expanded {
     position: relative;
     top: calc(var(--controls-top) * -1);
-    right: -23px;
+    right: -22px;
     height: 50px;
 }
 
@@ -204,4 +204,26 @@ h2 {
 
 .list-layout {
     padding-bottom: 40px;
+}
+
+@media (max-width: 412px) {
+    .controls {
+        top: 0;
+        right: 0;
+        width: -webkit-fill-available;
+    }
+
+    .collapse-toggle.expanded {
+        top: 0;
+        right: 0px;
+        border-top-right-radius: 0;
+    }
+
+    .controls.collapsed {
+        right: calc(var(--control-border-width) + 20px);
+    }
+
+    .controls-content {
+        padding-top: 60px;
+    }
 }
