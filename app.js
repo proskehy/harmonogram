@@ -48,6 +48,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(getDarkModeFromUrl);
   const [search, setSearch] = useState("");
   const [harmonogram, setHarmonogram] = useState([]);
+  const [controlsExpanded, setControlsExpanded] = useState(false);
 
   // Fetch harmonogram data
   useEffect(() => {
@@ -150,36 +151,51 @@ function App() {
   const scrollToDay = (d) => {
     const el = document.getElementById(`day-${d}`);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (window.innerWidth <= 600) setControlsExpanded(false);
   };
 
   return html`
     <div>
-      <div class="controls">
-        <input
-          type="text"
-          placeholder="Search for a band..."
-          value=${search}
-          onInput=${(e) => setSearch(e.target.value)}
-          class="search-input"
-        />
-        <div class="day-buttons">
-          ${[1, 2, 3, 4, 5].map(
-            (d) => html`
-              <button class="day-button" onClick=${() => scrollToDay(d)}>
-                Day ${d}
-              </button>
-            `,
-          )}
+      <div class="controls ${controlsExpanded ? "" : "collapsed"}">
+        <div class="controls-header ${controlsExpanded ? "expanded" : ""}">
+          <button
+            class="toggle-button collapse-toggle ${controlsExpanded
+              ? "expanded"
+              : ""}"
+            onClick=${() => setControlsExpanded(!controlsExpanded)}
+            title=${controlsExpanded ? "Close settings" : "Open settings"}
+          >
+            ${controlsExpanded ? "✕" : "⚙️"}
+          </button>
         </div>
-        <button
-          class="toggle-button"
-          onClick=${() => setShow(show === "all" ? "selected" : "all")}
-        >
-          Show: ${show === "all" ? "All Bands" : "My Selection"}
-        </button>
-        <button class="toggle-button" onClick=${() => setDarkMode(!darkMode)}>
-          ${darkMode ? "☀️ Light" : "🌙 Dark"}
-        </button>
+
+        <div class="controls-content">
+          <input
+            type="text"
+            placeholder="Search for a band..."
+            value=${search}
+            onInput=${(e) => setSearch(e.target.value)}
+            class="search-input"
+          />
+          <div class="day-buttons">
+            ${[1, 2, 3, 4, 5].map(
+              (d) => html`
+                <button class="day-button" onClick=${() => scrollToDay(d)}>
+                  Day ${d}
+                </button>
+              `,
+            )}
+          </div>
+          <button
+            class="toggle-button"
+            onClick=${() => setShow(show === "all" ? "selected" : "all")}
+          >
+            Show: ${show === "all" ? "All Bands" : "My Selection"}
+          </button>
+          <button class="toggle-button" onClick=${() => setDarkMode(!darkMode)}>
+            ${darkMode ? "☀️ Light" : "🌙 Dark"}
+          </button>
+        </div>
       </div>
 
       <div class="list-layout">
@@ -218,7 +234,7 @@ function App() {
                 ? html`<span
                     style="color: #f44336; font-size: 0.8em; margin-left: 10px;"
                   >
-                    ⚠️ Conflict:
+                    ${"⚠️ Conflict: "}
                     ${conflictingBands
                       .map((other) => {
                         const range = getTimeRange(band);

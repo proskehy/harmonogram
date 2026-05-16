@@ -54,27 +54,94 @@ body {
 }
 
 h2 {
-    scroll-margin-top: 85px; /* Adjust based on the height of your sticky controls */
+    scroll-margin-top: 20px;
 }
 
 .controls {
-    position: sticky;
-    top: 0;
+    position: fixed;
+    top: 25px;
+    right: 20px;
     background: var(--control-bg);
-    padding: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
+    padding: 20px;
     border: 3px solid var(--control-border);
-    z-index: 100;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+    width: 350px;
+}
+
+.controls.collapsed {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    top: 25px;
+    bottom: auto;
+    right: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls.collapsed:hover {
+    background: var(--button-bg);
+}
+
+.controls-header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.controls.collapsed .controls-header {
+    justify-content: center;
+    height: 100%;
+}
+
+.controls-header.expanded {
+    height: 0;
+}
+
+.controls-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 1;
+}
+
+.controls.collapsed .controls-content {
+    display: none;
+    opacity: 0;
+}
+
+.collapse-toggle {
+    padding: 0;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    max-width: 50px;
+}
+
+.collapse-toggle.expanded {
+    position: relative;
+    top: -20px;
+    right: -20px;
+    height: 50px;
 }
 
 .day-buttons {
     display: flex;
     gap: 5px;
+    flex-wrap: wrap;
 }
 
 .day-button,
@@ -104,11 +171,16 @@ h2 {
     border: 1px solid var(--card-border);
     background: var(--button-bg);
     color: var(--button-text);
-    flex-grow: 1;
-    min-width: 200px;
+    max-width: 315px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .search-input:focus {
     outline: none;
     border-color: var(--active-day-bg);
+}
+
+.list-layout {
+    padding-bottom: 80px;
 }
