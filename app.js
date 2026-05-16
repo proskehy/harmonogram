@@ -157,7 +157,6 @@ function App() {
   const setViewMode = (d) => {
     setShow(show === "all" ? "selected" : "all");
     scrollToDay(1);
-    if (window.innerWidth <= 600) setControlsExpanded(false);
   };
 
   return html`
