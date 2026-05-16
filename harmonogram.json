@@ -3,7 +3,7 @@
     "day": 1,
     "bandName": "Byt číslo 4",
     "startTime": "12:20",
-    "endTime": "13:05",
+    "endTime": "13:00",
     "stage": "Petr Svoboda",
     "bandId": "16"
   },
@@ -1473,19 +1473,19 @@
   },
   {
     "day": 4,
+    "bandName": "ŠatySVlečkou",
+    "startTime": "01:15",
+    "endTime": "03:00",
+    "stage": "Reflex",
+    "bandId": "181"
+  },
+  {
+    "day": 4,
     "bandName": "Delta Heavy",
     "startTime": "01:45",
     "endTime": "03:00",
     "stage": "E2",
     "bandId": "155"
-  },
-  {
-    "day": 4,
-    "bandName": "ŠatySVlečkou",
-    "startTime": "02:05",
-    "endTime": "03:00",
-    "stage": "Reflex",
-    "bandId": "181"
   },
   {
     "day": 5,
