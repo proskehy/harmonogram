@@ -79,7 +79,7 @@ h2 {
 
 .day-button,
 .toggle-button {
-    padding: 8px 12px;
+    padding: 8px;
     cursor: pointer;
     border: 1px solid var(--card-border);
     background: var(--button-bg);

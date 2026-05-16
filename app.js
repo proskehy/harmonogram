@@ -92,13 +92,13 @@ function App() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
-  const toggleBandSelection = (bandId) => {
-    const idStr = bandId.toString();
+  const toggleBandSelection = (band) => {
+    const idStr = band.bandId.toString();
     if (ids.includes(idStr)) {
       if (show === "selected") {
         if (
           !window.confirm(
-            "Are you sure you want to remove this band from your selection?",
+            `Are you sure you want to remove ${band.bandName} from your selection?`,
           )
         ) {
           return;
@@ -202,7 +202,7 @@ function App() {
             <div
               class="card"
               key=${band.bandId}
-              onClick=${() => toggleBandSelection(band.bandId)}
+              onClick=${() => toggleBandSelection(band)}
               style="cursor: pointer; border-left: 5px solid ${isSelected
                 ? conflict
                   ? "#f44336"
@@ -237,8 +237,8 @@ function App() {
                 : ""}
               <br />
               <span
-                >${band.startTime} - ${band.endTime} | Stage:
-                ${band.stage}</span
+                >${band.startTime} - ${band.endTime} |
+                ${` Stage: ${band.stage}`}</span
               >
             </div>
           `;
