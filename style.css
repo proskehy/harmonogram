@@ -1,0 +1,114 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-bg: #f9f9f9;
+    --card-border: #ccc;
+    --control-bg: white;
+    --control-border: #eee;
+    --button-bg: #fff;
+    --button-text: #000;
+    --active-day-bg: #007bff;
+    --active-day-text: #fff;
+    --conflict-bg: #ffebee;
+    --selected-bg: #e8f5e9;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --card-border: #333;
+    --control-bg: #1e1e1e;
+    --control-border: #333;
+    --button-bg: #2d2d2d;
+    --button-text: #e0e0e0;
+    --active-day-bg: #1a73e8;
+    --conflict-bg: #3c1616;
+    --selected-bg: #1b2e1b;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+.card {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    border-radius: 4px;
+}
+
+.list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+h2 {
+    scroll-margin-top: 85px; /* Adjust based on the height of your sticky controls */
+}
+
+.controls {
+    position: sticky;
+    top: 0;
+    background: var(--control-bg);
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 3px solid var(--control-border);
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.day-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.day-button,
+.toggle-button {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: 1px solid var(--card-border);
+    background: var(--button-bg);
+    color: var(--button-text);
+    border-radius: 4px;
+}
+
+.day-button.active {
+    background: var(--active-day-bg);
+    color: var(--active-day-text);
+    border-color: var(--active-day-bg);
+}
+
+.day-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--card-border);
+    background: var(--button-bg);
+    color: var(--button-text);
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--active-day-bg);
+}

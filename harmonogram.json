@@ -1,0 +1,1802 @@
+[
+  {
+    "day": 1,
+    "bandName": "Byt číslo 4",
+    "startTime": "12:20",
+    "endTime": "13:00",
+    "stage": "Petr Svoboda",
+    "bandId": "16"
+  },
+  {
+    "day": 1,
+    "bandName": "Circus Brothers",
+    "startTime": "12:45",
+    "endTime": "13:30",
+    "stage": "CT Art",
+    "bandId": "22"
+  },
+  {
+    "day": 1,
+    "bandName": "Bazzookas",
+    "startTime": "12:45",
+    "endTime": "13:25",
+    "stage": "EcoFlow",
+    "bandId": "33"
+  },
+  {
+    "day": 1,
+    "bandName": "We Came As Romans",
+    "startTime": "12:50",
+    "endTime": "13:35",
+    "stage": "RFP",
+    "bandId": "5"
+  },
+  {
+    "day": 1,
+    "bandName": "Kublai Khan TX",
+    "startTime": "13:05",
+    "endTime": "13:50",
+    "stage": "E2",
+    "bandId": "9"
+  },
+  {
+    "day": 1,
+    "bandName": "Magnolia Park",
+    "startTime": "13:40",
+    "endTime": "14:25",
+    "stage": "Mastercard",
+    "bandId": "1"
+  },
+  {
+    "day": 1,
+    "bandName": "Mouth Culture",
+    "startTime": "13:55",
+    "endTime": "14:40",
+    "stage": "Petr Svoboda",
+    "bandId": "17"
+  },
+  {
+    "day": 1,
+    "bandName": "Tolstoys",
+    "startTime": "14:15",
+    "endTime": "15:00",
+    "stage": "CT Art",
+    "bandId": "23"
+  },
+  {
+    "day": 1,
+    "bandName": "Bloodywood",
+    "startTime": "14:30",
+    "endTime": "15:30",
+    "stage": "RFP",
+    "bandId": "6"
+  },
+  {
+    "day": 1,
+    "bandName": "Cherryholt",
+    "startTime": "14:40",
+    "endTime": "15:20",
+    "stage": "EcoFlow",
+    "bandId": "34"
+  },
+  {
+    "day": 1,
+    "bandName": "VOILÀ",
+    "startTime": "14:45",
+    "endTime": "15:30",
+    "stage": "E2",
+    "bandId": "10"
+  },
+  {
+    "day": 1,
+    "bandName": "The Wombats",
+    "startTime": "15:35",
+    "endTime": "16:35",
+    "stage": "Mastercard",
+    "bandId": "2"
+  },
+  {
+    "day": 1,
+    "bandName": "Nevertel",
+    "startTime": "15:35",
+    "endTime": "16:20",
+    "stage": "Petr Svoboda",
+    "bandId": "18"
+  },
+  {
+    "day": 1,
+    "bandName": "Ecca Vandal",
+    "startTime": "15:45",
+    "endTime": "16:30",
+    "stage": "CT Art",
+    "bandId": "24"
+  },
+  {
+    "day": 1,
+    "bandName": "Lenka Dusilová: LD_50 a host David Koller",
+    "startTime": "16:25",
+    "endTime": "17:10",
+    "stage": "E2",
+    "bandId": "11"
+  },
+  {
+    "day": 1,
+    "bandName": "Megadeth",
+    "startTime": "16:40",
+    "endTime": "17:55",
+    "stage": "RFP",
+    "bandId": "7"
+  },
+  {
+    "day": 1,
+    "bandName": "Kašpárek v rohlíku",
+    "startTime": "17:10",
+    "endTime": "17:55",
+    "stage": "EcoFlow",
+    "bandId": "35"
+  },
+  {
+    "day": 1,
+    "bandName": "Gurriers",
+    "startTime": "17:15",
+    "endTime": "18:00",
+    "stage": "Petr Svoboda",
+    "bandId": "19"
+  },
+  {
+    "day": 1,
+    "bandName": "As It Is",
+    "startTime": "17:15",
+    "endTime": "18:00",
+    "stage": "CT Art",
+    "bandId": "25"
+  },
+  {
+    "day": 1,
+    "bandName": "Static-X",
+    "startTime": "18:05",
+    "endTime": "18:50",
+    "stage": "E2",
+    "bandId": "12"
+  },
+  {
+    "day": 1,
+    "bandName": "The Pretty Reckless",
+    "startTime": "18:10",
+    "endTime": "19:25",
+    "stage": "Mastercard",
+    "bandId": "3"
+  },
+  {
+    "day": 1,
+    "bandName": "TX2",
+    "startTime": "18:45",
+    "endTime": "19:30",
+    "stage": "CT Art",
+    "bandId": "26"
+  },
+  {
+    "day": 1,
+    "bandName": "Water From Your Eyes",
+    "startTime": "18:55",
+    "endTime": "19:40",
+    "stage": "Petr Svoboda",
+    "bandId": "20"
+  },
+  {
+    "day": 1,
+    "bandName": "Néstor Álvarez & Original Gravity Allstars",
+    "startTime": "19:30",
+    "endTime": "20:10",
+    "stage": "EcoFlow",
+    "bandId": "36"
+  },
+  {
+    "day": 1,
+    "bandName": "Electric Callboy",
+    "startTime": "19:40",
+    "endTime": "21:10",
+    "stage": "RFP",
+    "bandId": "8"
+  },
+  {
+    "day": 1,
+    "bandName": "Die Spitz",
+    "startTime": "20:00",
+    "endTime": "21:00",
+    "stage": "E2",
+    "bandId": "13"
+  },
+  {
+    "day": 1,
+    "bandName": "Genesis Owusu",
+    "startTime": "20:10",
+    "endTime": "20:55",
+    "stage": "CT Art",
+    "bandId": "27"
+  },
+  {
+    "day": 1,
+    "bandName": "supermodel*",
+    "startTime": "20:40",
+    "endTime": "21:20",
+    "stage": "EcoFlow",
+    "bandId": "37"
+  },
+  {
+    "day": 1,
+    "bandName": "Mønødream",
+    "startTime": "21:15",
+    "endTime": "22:00",
+    "stage": "Reflex",
+    "bandId": "31"
+  },
+  {
+    "day": 1,
+    "bandName": "Gorillaz",
+    "startTime": "21:30",
+    "endTime": "23:00",
+    "stage": "Mastercard",
+    "bandId": "4"
+  },
+  {
+    "day": 1,
+    "bandName": "Boundaries",
+    "startTime": "21:35",
+    "endTime": "22:20",
+    "stage": "CT Art",
+    "bandId": "28"
+  },
+  {
+    "day": 1,
+    "bandName": "Tchert",
+    "startTime": "21:45",
+    "endTime": "22:30",
+    "stage": "Petr Svoboda",
+    "bandId": "21"
+  },
+  {
+    "day": 1,
+    "bandName": "Trivium",
+    "startTime": "23:00",
+    "endTime": "00:00",
+    "stage": "E2",
+    "bandId": "14"
+  },
+  {
+    "day": 1,
+    "bandName": "thrown",
+    "startTime": "23:00",
+    "endTime": "00:00",
+    "stage": "CT Art",
+    "bandId": "29"
+  },
+  {
+    "day": 1,
+    "bandName": "Pendl",
+    "startTime": "23:15",
+    "endTime": "00:45",
+    "stage": "EcoFlow",
+    "bandId": "38"
+  },
+  {
+    "day": 1,
+    "bandName": "Zuzaně Navarové do nebes",
+    "startTime": "00:00",
+    "endTime": "01:30",
+    "stage": "Reflex",
+    "bandId": "32"
+  },
+  {
+    "day": 1,
+    "bandName": "Joey Valence & Brae",
+    "startTime": "00:30",
+    "endTime": "02:00",
+    "stage": "E2",
+    "bandId": "15"
+  },
+  {
+    "day": 1,
+    "bandName": "Alyx Holcombe",
+    "startTime": "00:30",
+    "endTime": "01:30",
+    "stage": "CT Art",
+    "bandId": "30"
+  },
+  {
+    "day": 2,
+    "bandName": "Losers Cirque Company – Konkurz",
+    "startTime": "11:15",
+    "endTime": "12:15",
+    "stage": "CT Art",
+    "bandId": "64"
+  },
+  {
+    "day": 2,
+    "bandName": "Thornhill",
+    "startTime": "11:25",
+    "endTime": "12:10",
+    "stage": "RFP",
+    "bandId": "44"
+  },
+  {
+    "day": 2,
+    "bandName": "MC Gey & Live Band",
+    "startTime": "11:25",
+    "endTime": "12:10",
+    "stage": "E2",
+    "bandId": "49"
+  },
+  {
+    "day": 2,
+    "bandName": "God Save The Drama Queen",
+    "startTime": "11:30",
+    "endTime": "12:10",
+    "stage": "EcoFlow",
+    "bandId": "81"
+  },
+  {
+    "day": 2,
+    "bandName": "Set It Off",
+    "startTime": "12:15",
+    "endTime": "13:00",
+    "stage": "Mastercard",
+    "bandId": "39"
+  },
+  {
+    "day": 2,
+    "bandName": "Banks Arcade",
+    "startTime": "12:15",
+    "endTime": "13:00",
+    "stage": "Petr Svoboda",
+    "bandId": "57"
+  },
+  {
+    "day": 2,
+    "bandName": "AI, mozek a rock’n’roll",
+    "startTime": "12:15",
+    "endTime": "13:15",
+    "stage": "Reflex",
+    "bandId": "74"
+  },
+  {
+    "day": 2,
+    "bandName": "ČT: Devadesátková hitparáda bizárů",
+    "startTime": "12:40",
+    "endTime": "13:25",
+    "stage": "CT Art",
+    "bandId": "65"
+  },
+  {
+    "day": 2,
+    "bandName": "Wohnout",
+    "startTime": "13:05",
+    "endTime": "13:50",
+    "stage": "RFP",
+    "bandId": "45"
+  },
+  {
+    "day": 2,
+    "bandName": "letlive.",
+    "startTime": "13:05",
+    "endTime": "13:50",
+    "stage": "E2",
+    "bandId": "50"
+  },
+  {
+    "day": 2,
+    "bandName": "Lomnické Čháve",
+    "startTime": "13:05",
+    "endTime": "13:55",
+    "stage": "EcoFlow",
+    "bandId": "82"
+  },
+  {
+    "day": 2,
+    "bandName": "Headliner: Hudební masakry",
+    "startTime": "13:50",
+    "endTime": "14:50",
+    "stage": "Reflex",
+    "bandId": "75"
+  },
+  {
+    "day": 2,
+    "bandName": "The Plot In You",
+    "startTime": "13:55",
+    "endTime": "14:40",
+    "stage": "Mastercard",
+    "bandId": "40"
+  },
+  {
+    "day": 2,
+    "bandName": "The Pretty Wild",
+    "startTime": "13:55",
+    "endTime": "14:40",
+    "stage": "Petr Svoboda",
+    "bandId": "58"
+  },
+  {
+    "day": 2,
+    "bandName": "Orchestr Ježkovy stopy",
+    "startTime": "14:10",
+    "endTime": "14:55",
+    "stage": "CT Art",
+    "bandId": "66"
+  },
+  {
+    "day": 2,
+    "bandName": "Social Distortion",
+    "startTime": "14:45",
+    "endTime": "15:45",
+    "stage": "RFP",
+    "bandId": "46"
+  },
+  {
+    "day": 2,
+    "bandName": "Catch Your Breath",
+    "startTime": "14:45",
+    "endTime": "15:30",
+    "stage": "E2",
+    "bandId": "51"
+  },
+  {
+    "day": 2,
+    "bandName": "Indoor Foxes",
+    "startTime": "14:55",
+    "endTime": "15:35",
+    "stage": "EcoFlow",
+    "bandId": "83"
+  },
+  {
+    "day": 2,
+    "bandName": "Radio Free Alice",
+    "startTime": "15:35",
+    "endTime": "16:20",
+    "stage": "Petr Svoboda",
+    "bandId": "59"
+  },
+  {
+    "day": 2,
+    "bandName": "ČT: Na dosah s Danielem Stachem",
+    "startTime": "15:40",
+    "endTime": "16:35",
+    "stage": "CT Art",
+    "bandId": "67"
+  },
+  {
+    "day": 2,
+    "bandName": "Breaking Benjamin",
+    "startTime": "15:50",
+    "endTime": "16:50",
+    "stage": "Mastercard",
+    "bandId": "41"
+  },
+  {
+    "day": 2,
+    "bandName": "Reflex: Poprask",
+    "startTime": "15:50",
+    "endTime": "16:50",
+    "stage": "Reflex",
+    "bandId": "76"
+  },
+  {
+    "day": 2,
+    "bandName": "Blood Incantation",
+    "startTime": "16:25",
+    "endTime": "17:10",
+    "stage": "E2",
+    "bandId": "52"
+  },
+  {
+    "day": 2,
+    "bandName": "All Time Low",
+    "startTime": "16:55",
+    "endTime": "17:55",
+    "stage": "RFP",
+    "bandId": "47"
+  },
+  {
+    "day": 2,
+    "bandName": "Last Train",
+    "startTime": "17:15",
+    "endTime": "18:00",
+    "stage": "Petr Svoboda",
+    "bandId": "60"
+  },
+  {
+    "day": 2,
+    "bandName": "Wóďa a Dekorace",
+    "startTime": "17:15",
+    "endTime": "17:55",
+    "stage": "EcoFlow",
+    "bandId": "84"
+  },
+  {
+    "day": 2,
+    "bandName": "Quicksand",
+    "startTime": "17:20",
+    "endTime": "18:05",
+    "stage": "CT Art",
+    "bandId": "68"
+  },
+  {
+    "day": 2,
+    "bandName": "Destroy Boys",
+    "startTime": "18:05",
+    "endTime": "18:50",
+    "stage": "E2",
+    "bandId": "53"
+  },
+  {
+    "day": 2,
+    "bandName": "BABYMETAL",
+    "startTime": "18:10",
+    "endTime": "19:25",
+    "stage": "Mastercard",
+    "bandId": "42"
+  },
+  {
+    "day": 2,
+    "bandName": "James Cole & Idea",
+    "startTime": "18:45",
+    "endTime": "19:30",
+    "stage": "CT Art",
+    "bandId": "69"
+  },
+  {
+    "day": 2,
+    "bandName": "Frankie & The Deadbeats",
+    "startTime": "18:45",
+    "endTime": "19:30",
+    "stage": "Reflex",
+    "bandId": "77"
+  },
+  {
+    "day": 2,
+    "bandName": "Barns Courtney",
+    "startTime": "18:55",
+    "endTime": "19:40",
+    "stage": "Petr Svoboda",
+    "bandId": "61"
+  },
+  {
+    "day": 2,
+    "bandName": "Wyfe",
+    "startTime": "19:30",
+    "endTime": "20:10",
+    "stage": "EcoFlow",
+    "bandId": "85"
+  },
+  {
+    "day": 2,
+    "bandName": "Papa Roach",
+    "startTime": "19:40",
+    "endTime": "21:10",
+    "stage": "RFP",
+    "bandId": "48"
+  },
+  {
+    "day": 2,
+    "bandName": "Yard Act",
+    "startTime": "19:50",
+    "endTime": "20:50",
+    "stage": "E2",
+    "bandId": "54"
+  },
+  {
+    "day": 2,
+    "bandName": "Etta Marcus",
+    "startTime": "20:10",
+    "endTime": "20:55",
+    "stage": "CT Art",
+    "bandId": "70"
+  },
+  {
+    "day": 2,
+    "bandName": "Deki Alem",
+    "startTime": "20:50",
+    "endTime": "21:35",
+    "stage": "Petr Svoboda",
+    "bandId": "62"
+  },
+  {
+    "day": 2,
+    "bandName": "The Fialky",
+    "startTime": "21:20",
+    "endTime": "22:05",
+    "stage": "Reflex",
+    "bandId": "78"
+  },
+  {
+    "day": 2,
+    "bandName": "Limp Bizkit",
+    "startTime": "21:30",
+    "endTime": "23:00",
+    "stage": "Mastercard",
+    "bandId": "43"
+  },
+  {
+    "day": 2,
+    "bandName": "Vltava",
+    "startTime": "21:35",
+    "endTime": "22:20",
+    "stage": "CT Art",
+    "bandId": "71"
+  },
+  {
+    "day": 2,
+    "bandName": "Dizzlove",
+    "startTime": "22:15",
+    "endTime": "23:00",
+    "stage": "Petr Svoboda",
+    "bandId": "63"
+  },
+  {
+    "day": 2,
+    "bandName": "The All-American Rejects",
+    "startTime": "23:00",
+    "endTime": "00:00",
+    "stage": "E2",
+    "bandId": "55"
+  },
+  {
+    "day": 2,
+    "bandName": "Melrose Avenue",
+    "startTime": "23:00",
+    "endTime": "00:00",
+    "stage": "CT Art",
+    "bandId": "72"
+  },
+  {
+    "day": 2,
+    "bandName": "DeSade X Denoi",
+    "startTime": "23:00",
+    "endTime": "00:00",
+    "stage": "Reflex",
+    "bandId": "79"
+  },
+  {
+    "day": 2,
+    "bandName": "Gleb",
+    "startTime": "00:30",
+    "endTime": "01:30",
+    "stage": "E2",
+    "bandId": "56"
+  },
+  {
+    "day": 2,
+    "bandName": "The Prague Burlesque Show: Velvet Hammer",
+    "startTime": "00:30",
+    "endTime": "01:30",
+    "stage": "CT Art",
+    "bandId": "73"
+  },
+  {
+    "day": 2,
+    "bandName": "Klubovna Afterparty",
+    "startTime": "00:30",
+    "endTime": "01:30",
+    "stage": "Reflex",
+    "bandId": "80"
+  },
+  {
+    "day": 3,
+    "bandName": "30 Ro(c)ků for People",
+    "startTime": "11:20",
+    "endTime": "12:20",
+    "stage": "CT Art",
+    "bandId": "113"
+  },
+  {
+    "day": 3,
+    "bandName": "ČT: Důležitost veřejnoprávního vysílání",
+    "startTime": "11:30",
+    "endTime": "12:20",
+    "stage": "Reflex",
+    "bandId": "123"
+  },
+  {
+    "day": 3,
+    "bandName": "Ego Kill Talent",
+    "startTime": "12:00",
+    "endTime": "12:45",
+    "stage": "E2",
+    "bandId": "97"
+  },
+  {
+    "day": 3,
+    "bandName": "South Arcade",
+    "startTime": "12:30",
+    "endTime": "13:15",
+    "stage": "RFP",
+    "bandId": "91"
+  },
+  {
+    "day": 3,
+    "bandName": "Underground Comedy Club",
+    "startTime": "12:30",
+    "endTime": "13:10",
+    "stage": "EcoFlow",
+    "bandId": "131"
+  },
+  {
+    "day": 3,
+    "bandName": "The Clause",
+    "startTime": "12:50",
+    "endTime": "13:35",
+    "stage": "Petr Svoboda",
+    "bandId": "105"
+  },
+  {
+    "day": 3,
+    "bandName": "Kuchyňské porno",
+    "startTime": "13:05",
+    "endTime": "14:05",
+    "stage": "CT Art",
+    "bandId": "114"
+  },
+  {
+    "day": 3,
+    "bandName": "Reflex: Prostor X",
+    "startTime": "13:15",
+    "endTime": "14:00",
+    "stage": "Reflex",
+    "bandId": "124"
+  },
+  {
+    "day": 3,
+    "bandName": "Basement",
+    "startTime": "13:20",
+    "endTime": "14:05",
+    "stage": "Mastercard",
+    "bandId": "86"
+  },
+  {
+    "day": 3,
+    "bandName": "Trash Boat",
+    "startTime": "13:40",
+    "endTime": "14:25",
+    "stage": "E2",
+    "bandId": "98"
+  },
+  {
+    "day": 3,
+    "bandName": "Gatecreeper",
+    "startTime": "14:10",
+    "endTime": "14:55",
+    "stage": "RFP",
+    "bandId": "92"
+  },
+  {
+    "day": 3,
+    "bandName": "Sestry Chalupovy",
+    "startTime": "14:10",
+    "endTime": "14:50",
+    "stage": "EcoFlow",
+    "bandId": "132"
+  },
+  {
+    "day": 3,
+    "bandName": "Ankor",
+    "startTime": "14:30",
+    "endTime": "15:15",
+    "stage": "Petr Svoboda",
+    "bandId": "106"
+  },
+  {
+    "day": 3,
+    "bandName": "AZ-kvíz",
+    "startTime": "14:50",
+    "endTime": "15:35",
+    "stage": "CT Art",
+    "bandId": "165"
+  },
+  {
+    "day": 3,
+    "bandName": "Culture for Future: Může hudba měnit svět?",
+    "startTime": "14:55",
+    "endTime": "15:40",
+    "stage": "Reflex",
+    "bandId": "125"
+  },
+  {
+    "day": 3,
+    "bandName": "Ben Cristovao",
+    "startTime": "15:00",
+    "endTime": "15:45",
+    "stage": "Mastercard",
+    "bandId": "87"
+  },
+  {
+    "day": 3,
+    "bandName": "Dying Wish",
+    "startTime": "15:20",
+    "endTime": "16:05",
+    "stage": "E2",
+    "bandId": "99"
+  },
+  {
+    "day": 3,
+    "bandName": "Dinosaur Pile-Up",
+    "startTime": "15:50",
+    "endTime": "16:35",
+    "stage": "RFP",
+    "bandId": "93"
+  },
+  {
+    "day": 3,
+    "bandName": "Any Young Mechanic",
+    "startTime": "15:50",
+    "endTime": "16:30",
+    "stage": "EcoFlow",
+    "bandId": "133"
+  },
+  {
+    "day": 3,
+    "bandName": "Dave Lofts",
+    "startTime": "16:10",
+    "endTime": "16:55",
+    "stage": "Petr Svoboda",
+    "bandId": "107"
+  },
+  {
+    "day": 3,
+    "bandName": "Božejáci",
+    "startTime": "16:20",
+    "endTime": "17:05",
+    "stage": "CT Art",
+    "bandId": "116"
+  },
+  {
+    "day": 3,
+    "bandName": "The Studio 32 (Musical) Comedy Show! (EN ONLY)",
+    "startTime": "16:35",
+    "endTime": "17:20",
+    "stage": "Reflex",
+    "bandId": "126"
+  },
+  {
+    "day": 3,
+    "bandName": "Tom Morello",
+    "startTime": "16:40",
+    "endTime": "17:40",
+    "stage": "Mastercard",
+    "bandId": "88"
+  },
+  {
+    "day": 3,
+    "bandName": "Jiří Pavlica & Hradišťan",
+    "startTime": "17:00",
+    "endTime": "17:45",
+    "stage": "E2",
+    "bandId": "100"
+  },
+  {
+    "day": 3,
+    "bandName": "UE",
+    "startTime": "17:40",
+    "endTime": "18:25",
+    "stage": "EcoFlow",
+    "bandId": "134"
+  },
+  {
+    "day": 3,
+    "bandName": "Bilmuri",
+    "startTime": "17:45",
+    "endTime": "18:45",
+    "stage": "RFP",
+    "bandId": "94"
+  },
+  {
+    "day": 3,
+    "bandName": "Private School",
+    "startTime": "17:50",
+    "endTime": "18:35",
+    "stage": "Petr Svoboda",
+    "bandId": "108"
+  },
+  {
+    "day": 3,
+    "bandName": "Stand-up Comedy: Tatty Macleod (EN ONLY)",
+    "startTime": "17:50",
+    "endTime": "18:35",
+    "stage": "CT Art",
+    "bandId": "117"
+  },
+  {
+    "day": 3,
+    "bandName": "ivri",
+    "startTime": "18:40",
+    "endTime": "19:25",
+    "stage": "E2",
+    "bandId": "101"
+  },
+  {
+    "day": 3,
+    "bandName": "Startér: teige",
+    "startTime": "18:45",
+    "endTime": "19:30",
+    "stage": "Reflex",
+    "bandId": "127"
+  },
+  {
+    "day": 3,
+    "bandName": "A Day To Remember",
+    "startTime": "19:00",
+    "endTime": "20:15",
+    "stage": "Mastercard",
+    "bandId": "89"
+  },
+  {
+    "day": 3,
+    "bandName": "Lottery Winners",
+    "startTime": "19:20",
+    "endTime": "20:05",
+    "stage": "CT Art",
+    "bandId": "118"
+  },
+  {
+    "day": 3,
+    "bandName": "unpeople",
+    "startTime": "19:45",
+    "endTime": "20:30",
+    "stage": "Petr Svoboda",
+    "bandId": "109"
+  },
+  {
+    "day": 3,
+    "bandName": "Wolf Alice",
+    "startTime": "20:30",
+    "endTime": "21:30",
+    "stage": "RFP",
+    "bandId": "95"
+  },
+  {
+    "day": 3,
+    "bandName": "High Vis",
+    "startTime": "20:30",
+    "endTime": "21:30",
+    "stage": "E2",
+    "bandId": "102"
+  },
+  {
+    "day": 3,
+    "bandName": "FVCK_KVLT",
+    "startTime": "20:30",
+    "endTime": "21:15",
+    "stage": "EcoFlow",
+    "bandId": "135"
+  },
+  {
+    "day": 3,
+    "bandName": "Zero 9:36",
+    "startTime": "20:45",
+    "endTime": "21:30",
+    "stage": "CT Art",
+    "bandId": "119"
+  },
+  {
+    "day": 3,
+    "bandName": "Kvietah",
+    "startTime": "21:30",
+    "endTime": "22:15",
+    "stage": "Petr Svoboda",
+    "bandId": "110"
+  },
+  {
+    "day": 3,
+    "bandName": "Bring Me The Horizon",
+    "startTime": "21:45",
+    "endTime": "23:15",
+    "stage": "Mastercard",
+    "bandId": "90"
+  },
+  {
+    "day": 3,
+    "bandName": "FVLCRVM",
+    "startTime": "22:10",
+    "endTime": "22:55",
+    "stage": "CT Art",
+    "bandId": "120"
+  },
+  {
+    "day": 3,
+    "bandName": "Marie April",
+    "startTime": "22:45",
+    "endTime": "23:30",
+    "stage": "Reflex",
+    "bandId": "128"
+  },
+  {
+    "day": 3,
+    "bandName": "VOWER",
+    "startTime": "23:15",
+    "endTime": "00:00",
+    "stage": "Petr Svoboda",
+    "bandId": "111"
+  },
+  {
+    "day": 3,
+    "bandName": "Three Days Grace",
+    "startTime": "23:30",
+    "endTime": "01:00",
+    "stage": "RFP",
+    "bandId": "96"
+  },
+  {
+    "day": 3,
+    "bandName": "Noisy Pots",
+    "startTime": "23:30",
+    "endTime": "00:30",
+    "stage": "EcoFlow",
+    "bandId": "136"
+  },
+  {
+    "day": 3,
+    "bandName": "Gaerea",
+    "startTime": "23:35",
+    "endTime": "00:20",
+    "stage": "CT Art",
+    "bandId": "121"
+  },
+  {
+    "day": 3,
+    "bandName": "Tata Bojs",
+    "startTime": "00:00",
+    "endTime": "01:10",
+    "stage": "E2",
+    "bandId": "103"
+  },
+  {
+    "day": 3,
+    "bandName": "Madface",
+    "startTime": "00:30",
+    "endTime": "01:30",
+    "stage": "Reflex",
+    "bandId": "129"
+  },
+  {
+    "day": 3,
+    "bandName": "Ventolin",
+    "startTime": "01:00",
+    "endTime": "02:00",
+    "stage": "CT Art",
+    "bandId": "122"
+  },
+  {
+    "day": 3,
+    "bandName": "Glare",
+    "startTime": "01:10",
+    "endTime": "01:55",
+    "stage": "Petr Svoboda",
+    "bandId": "112"
+  },
+  {
+    "day": 3,
+    "bandName": "Leduy + Bea",
+    "startTime": "01:30",
+    "endTime": "03:00",
+    "stage": "Reflex",
+    "bandId": "130"
+  },
+  {
+    "day": 3,
+    "bandName": "SVDDEN DEATH",
+    "startTime": "01:55",
+    "endTime": "03:00",
+    "stage": "E2",
+    "bandId": "104"
+  },
+  {
+    "day": 4,
+    "bandName": "Svatba Jiřího Káry (Remastered)",
+    "startTime": "11:15",
+    "endTime": "12:00",
+    "stage": "CT Art",
+    "bandId": "163"
+  },
+  {
+    "day": 4,
+    "bandName": "Cimbálová muzika Friška",
+    "startTime": "11:25",
+    "endTime": "12:10",
+    "stage": "EcoFlow",
+    "bandId": "182"
+  },
+  {
+    "day": 4,
+    "bandName": "F-Talk Díky, že můžem: Má být kultura (a)politická?",
+    "startTime": "11:30",
+    "endTime": "12:15",
+    "stage": "Reflex",
+    "bandId": "173"
+  },
+  {
+    "day": 4,
+    "bandName": "ČT: Taneční škola StarDance",
+    "startTime": "12:20",
+    "endTime": "13:05",
+    "stage": "CT Art",
+    "bandId": "164"
+  },
+  {
+    "day": 4,
+    "bandName": "Calva Louise",
+    "startTime": "12:30",
+    "endTime": "13:15",
+    "stage": "E2",
+    "bandId": "148"
+  },
+  {
+    "day": 4,
+    "bandName": "Prague Pride v roce 2026: Co slavíme a za co ještě bojujeme?",
+    "startTime": "12:30",
+    "endTime": "13:15",
+    "stage": "Reflex",
+    "bandId": "174"
+  },
+  {
+    "day": 4,
+    "bandName": "Police Symphony Orchestra",
+    "startTime": "13:10",
+    "endTime": "13:55",
+    "stage": "RFP",
+    "bandId": "142"
+  },
+  {
+    "day": 4,
+    "bandName": "Slam Poetry: Slamatéři",
+    "startTime": "13:10",
+    "endTime": "13:50",
+    "stage": "EcoFlow",
+    "bandId": "183"
+  },
+  {
+    "day": 4,
+    "bandName": "Grade 2",
+    "startTime": "13:20",
+    "endTime": "14:05",
+    "stage": "Petr Svoboda",
+    "bandId": "156"
+  },
+  {
+    "day": 4,
+    "bandName": "AZ-kvíz",
+    "startTime": "13:50",
+    "endTime": "14:45",
+    "stage": "CT Art",
+    "bandId": "165"
+  },
+  {
+    "day": 4,
+    "bandName": "Nevypusť duši: Emoce jako spojenec",
+    "startTime": "13:55",
+    "endTime": "14:40",
+    "stage": "Reflex",
+    "bandId": "175"
+  },
+  {
+    "day": 4,
+    "bandName": "Kid Kapichi",
+    "startTime": "14:00",
+    "endTime": "14:45",
+    "stage": "Mastercard",
+    "bandId": "137"
+  },
+  {
+    "day": 4,
+    "bandName": "Berlin Manson",
+    "startTime": "14:10",
+    "endTime": "14:55",
+    "stage": "E2",
+    "bandId": "149"
+  },
+  {
+    "day": 4,
+    "bandName": "Bury Tomorrow",
+    "startTime": "14:50",
+    "endTime": "15:35",
+    "stage": "RFP",
+    "bandId": "143"
+  },
+  {
+    "day": 4,
+    "bandName": "Westside Cowboy",
+    "startTime": "15:00",
+    "endTime": "15:45",
+    "stage": "Petr Svoboda",
+    "bandId": "157"
+  },
+  {
+    "day": 4,
+    "bandName": "Na stojáka",
+    "startTime": "15:30",
+    "endTime": "16:30",
+    "stage": "CT Art",
+    "bandId": "166"
+  },
+  {
+    "day": 4,
+    "bandName": "Headliner: Půda",
+    "startTime": "15:35",
+    "endTime": "16:20",
+    "stage": "Reflex",
+    "bandId": "176"
+  },
+  {
+    "day": 4,
+    "bandName": "Alessi Rose",
+    "startTime": "15:40",
+    "endTime": "16:25",
+    "stage": "Mastercard",
+    "bandId": "138"
+  },
+  {
+    "day": 4,
+    "bandName": "I Killed The Prom Queen",
+    "startTime": "15:50",
+    "endTime": "16:35",
+    "stage": "E2",
+    "bandId": "150"
+  },
+  {
+    "day": 4,
+    "bandName": "Sofian Medjmedj",
+    "startTime": "16:30",
+    "endTime": "17:15",
+    "stage": "RFP",
+    "bandId": "144"
+  },
+  {
+    "day": 4,
+    "bandName": "Acid Row",
+    "startTime": "16:30",
+    "endTime": "17:10",
+    "stage": "EcoFlow",
+    "bandId": "184"
+  },
+  {
+    "day": 4,
+    "bandName": "overpass",
+    "startTime": "16:40",
+    "endTime": "17:25",
+    "stage": "Petr Svoboda",
+    "bandId": "158"
+  },
+  {
+    "day": 4,
+    "bandName": "PINKBUS: Hezky česky",
+    "startTime": "17:15",
+    "endTime": "18:15",
+    "stage": "CT Art",
+    "bandId": "167"
+  },
+  {
+    "day": 4,
+    "bandName": "Reflex: Padni komu padni",
+    "startTime": "17:15",
+    "endTime": "18:00",
+    "stage": "Reflex",
+    "bandId": "177"
+  },
+  {
+    "day": 4,
+    "bandName": "Don Broco",
+    "startTime": "17:20",
+    "endTime": "18:20",
+    "stage": "Mastercard",
+    "bandId": "139"
+  },
+  {
+    "day": 4,
+    "bandName": "Malevolence",
+    "startTime": "17:30",
+    "endTime": "18:15",
+    "stage": "E2",
+    "bandId": "151"
+  },
+  {
+    "day": 4,
+    "bandName": "Keo",
+    "startTime": "18:20",
+    "endTime": "19:05",
+    "stage": "Petr Svoboda",
+    "bandId": "159"
+  },
+  {
+    "day": 4,
+    "bandName": "Simon Opp",
+    "startTime": "18:20",
+    "endTime": "19:05",
+    "stage": "EcoFlow",
+    "bandId": "185"
+  },
+  {
+    "day": 4,
+    "bandName": "Yonaka",
+    "startTime": "18:25",
+    "endTime": "19:25",
+    "stage": "RFP",
+    "bandId": "145"
+  },
+  {
+    "day": 4,
+    "bandName": "VENUS GRRRLS",
+    "startTime": "19:00",
+    "endTime": "19:45",
+    "stage": "CT Art",
+    "bandId": "168"
+  },
+  {
+    "day": 4,
+    "bandName": "PRESIDENT",
+    "startTime": "19:10",
+    "endTime": "19:55",
+    "stage": "E2",
+    "bandId": "152"
+  },
+  {
+    "day": 4,
+    "bandName": "Overgrown",
+    "startTime": "19:25",
+    "endTime": "20:10",
+    "stage": "Reflex",
+    "bandId": "178"
+  },
+  {
+    "day": 4,
+    "bandName": "Nothing But Thieves",
+    "startTime": "19:30",
+    "endTime": "20:45",
+    "stage": "Mastercard",
+    "bandId": "140"
+  },
+  {
+    "day": 4,
+    "bandName": "spill tab",
+    "startTime": "20:00",
+    "endTime": "20:45",
+    "stage": "Petr Svoboda",
+    "bandId": "160"
+  },
+  {
+    "day": 4,
+    "bandName": "SNAYX",
+    "startTime": "20:30",
+    "endTime": "21:15",
+    "stage": "CT Art",
+    "bandId": "169"
+  },
+  {
+    "day": 4,
+    "bandName": "blackbear",
+    "startTime": "20:50",
+    "endTime": "21:50",
+    "stage": "RFP",
+    "bandId": "146"
+  },
+  {
+    "day": 4,
+    "bandName": "Silent Planet",
+    "startTime": "20:50",
+    "endTime": "21:50",
+    "stage": "E2",
+    "bandId": "153"
+  },
+  {
+    "day": 4,
+    "bandName": "Elektrïck Mann",
+    "startTime": "21:25",
+    "endTime": "22:10",
+    "stage": "EcoFlow",
+    "bandId": "186"
+  },
+  {
+    "day": 4,
+    "bandName": "Hopes",
+    "startTime": "21:50",
+    "endTime": "22:35",
+    "stage": "Reflex",
+    "bandId": "179"
+  },
+  {
+    "day": 4,
+    "bandName": "The 900: Tony Hawk's Pro Skater Cover Band",
+    "startTime": "21:55",
+    "endTime": "22:40",
+    "stage": "CT Art",
+    "bandId": "170"
+  },
+  {
+    "day": 4,
+    "bandName": "Halsey",
+    "startTime": "22:10",
+    "endTime": "23:40",
+    "stage": "Mastercard",
+    "bandId": "141"
+  },
+  {
+    "day": 4,
+    "bandName": "REZN",
+    "startTime": "23:15",
+    "endTime": "00:00",
+    "stage": "Petr Svoboda",
+    "bandId": "161"
+  },
+  {
+    "day": 4,
+    "bandName": "Holywatr",
+    "startTime": "23:20",
+    "endTime": "00:20",
+    "stage": "CT Art",
+    "bandId": "171"
+  },
+  {
+    "day": 4,
+    "bandName": "post-hudba",
+    "startTime": "23:30",
+    "endTime": "00:15",
+    "stage": "Reflex",
+    "bandId": "180"
+  },
+  {
+    "day": 4,
+    "bandName": "Within Temptation",
+    "startTime": "23:45",
+    "endTime": "01:00",
+    "stage": "RFP",
+    "bandId": "147"
+  },
+  {
+    "day": 4,
+    "bandName": "Babyshambles",
+    "startTime": "00:00",
+    "endTime": "01:00",
+    "stage": "E2",
+    "bandId": "154"
+  },
+  {
+    "day": 4,
+    "bandName": "ALT BLK ERA",
+    "startTime": "01:00",
+    "endTime": "01:45",
+    "stage": "Petr Svoboda",
+    "bandId": "162"
+  },
+  {
+    "day": 4,
+    "bandName": "The Funeral Portrait",
+    "startTime": "01:00",
+    "endTime": "02:00",
+    "stage": "CT Art",
+    "bandId": "172"
+  },
+  {
+    "day": 4,
+    "bandName": "Delta Heavy",
+    "startTime": "01:45",
+    "endTime": "03:00",
+    "stage": "E2",
+    "bandId": "155"
+  },
+  {
+    "day": 4,
+    "bandName": "ŠatySVlečkou",
+    "startTime": "02:05",
+    "endTime": "03:00",
+    "stage": "Reflex",
+    "bandId": "181"
+  },
+  {
+    "day": 5,
+    "bandName": "Hollow Suns",
+    "startTime": "10:10",
+    "endTime": "10:50",
+    "stage": "Karaoke",
+    "bandId": "224"
+  },
+  {
+    "day": 5,
+    "bandName": "Excide",
+    "startTime": "11:30",
+    "endTime": "12:10",
+    "stage": "Karaoke",
+    "bandId": "225"
+  },
+  {
+    "day": 5,
+    "bandName": "Headliner: NOTY VOLE!",
+    "startTime": "12:40",
+    "endTime": "13:25",
+    "stage": "Reflex",
+    "bandId": "214"
+  },
+  {
+    "day": 5,
+    "bandName": "Kmeny – Thrash metal",
+    "startTime": "12:45",
+    "endTime": "13:15",
+    "stage": "CT Art",
+    "bandId": "207"
+  },
+  {
+    "day": 5,
+    "bandName": "The Molotovs",
+    "startTime": "13:10",
+    "endTime": "13:55",
+    "stage": "E2",
+    "bandId": "195"
+  },
+  {
+    "day": 5,
+    "bandName": "BLACKGOLD",
+    "startTime": "13:25",
+    "endTime": "14:10",
+    "stage": "RFP",
+    "bandId": "191"
+  },
+  {
+    "day": 5,
+    "bandName": "Frozen Poppyhead",
+    "startTime": "13:25",
+    "endTime": "14:05",
+    "stage": "EcoFlow",
+    "bandId": "219"
+  },
+  {
+    "day": 5,
+    "bandName": "CHRPY",
+    "startTime": "13:55",
+    "endTime": "14:40",
+    "stage": "Petr Svoboda",
+    "bandId": "201"
+  },
+  {
+    "day": 5,
+    "bandName": "AZ-Kvíz – Iron Maiden Edition",
+    "startTime": "14:10",
+    "endTime": "15:00",
+    "stage": "CT Art",
+    "bandId": "208"
+  },
+  {
+    "day": 5,
+    "bandName": "Slam Poetry Show",
+    "startTime": "14:10",
+    "endTime": "14:55",
+    "stage": "Reflex",
+    "bandId": "215"
+  },
+  {
+    "day": 5,
+    "bandName": "Loathe",
+    "startTime": "14:15",
+    "endTime": "15:00",
+    "stage": "Mastercard",
+    "bandId": "187"
+  },
+  {
+    "day": 5,
+    "bandName": "Militarie Gun",
+    "startTime": "14:40",
+    "endTime": "15:25",
+    "stage": "E2",
+    "bandId": "196"
+  },
+  {
+    "day": 5,
+    "bandName": "Alice & Dan Bárta",
+    "startTime": "15:05",
+    "endTime": "15:50",
+    "stage": "RFP",
+    "bandId": "192"
+  },
+  {
+    "day": 5,
+    "bandName": "Lunarsea",
+    "startTime": "15:15",
+    "endTime": "15:55",
+    "stage": "EcoFlow",
+    "bandId": "220"
+  },
+  {
+    "day": 5,
+    "bandName": "Gridiron",
+    "startTime": "15:25",
+    "endTime": "16:10",
+    "stage": "Petr Svoboda",
+    "bandId": "202"
+  },
+  {
+    "day": 5,
+    "bandName": "Losers Cirque Company – Onyx",
+    "startTime": "15:50",
+    "endTime": "16:20",
+    "stage": "CT Art",
+    "bandId": "209"
+  },
+  {
+    "day": 5,
+    "bandName": "Česká metalová scéna v 80. a 90. letech",
+    "startTime": "15:50",
+    "endTime": "16:35",
+    "stage": "Reflex",
+    "bandId": "216"
+  },
+  {
+    "day": 5,
+    "bandName": "Queensrÿche",
+    "startTime": "15:55",
+    "endTime": "16:40",
+    "stage": "Mastercard",
+    "bandId": "188"
+  },
+  {
+    "day": 5,
+    "bandName": "Man With A Mission",
+    "startTime": "16:10",
+    "endTime": "16:55",
+    "stage": "E2",
+    "bandId": "197"
+  },
+  {
+    "day": 5,
+    "bandName": "Knocked Loose",
+    "startTime": "16:45",
+    "endTime": "17:45",
+    "stage": "RFP",
+    "bandId": "193"
+  },
+  {
+    "day": 5,
+    "bandName": "The Lilacs",
+    "startTime": "16:55",
+    "endTime": "17:40",
+    "stage": "Petr Svoboda",
+    "bandId": "203"
+  },
+  {
+    "day": 5,
+    "bandName": "Groove Army: Royal Squad",
+    "startTime": "17:10",
+    "endTime": "18:00",
+    "stage": "CT Art",
+    "bandId": "210"
+  },
+  {
+    "day": 5,
+    "bandName": "Florence Black",
+    "startTime": "17:10",
+    "endTime": "17:50",
+    "stage": "EcoFlow",
+    "bandId": "221"
+  },
+  {
+    "day": 5,
+    "bandName": "Sleep Theory",
+    "startTime": "17:45",
+    "endTime": "18:30",
+    "stage": "E2",
+    "bandId": "198"
+  },
+  {
+    "day": 5,
+    "bandName": "Cold Meat Party",
+    "startTime": "17:45",
+    "endTime": "18:30",
+    "stage": "Reflex",
+    "bandId": "217"
+  },
+  {
+    "day": 5,
+    "bandName": "Alter Bridge",
+    "startTime": "17:50",
+    "endTime": "18:50",
+    "stage": "Mastercard",
+    "bandId": "189"
+  },
+  {
+    "day": 5,
+    "bandName": "Linka Moja",
+    "startTime": "18:30",
+    "endTime": "19:15",
+    "stage": "Petr Svoboda",
+    "bandId": "204"
+  },
+  {
+    "day": 5,
+    "bandName": "vianova",
+    "startTime": "18:45",
+    "endTime": "19:30",
+    "stage": "CT Art",
+    "bandId": "211"
+  },
+  {
+    "day": 5,
+    "bandName": "Saxon",
+    "startTime": "19:05",
+    "endTime": "20:20",
+    "stage": "RFP",
+    "bandId": "194"
+  },
+  {
+    "day": 5,
+    "bandName": "Alexisonfire",
+    "startTime": "19:20",
+    "endTime": "20:20",
+    "stage": "E2",
+    "bandId": "199"
+  },
+  {
+    "day": 5,
+    "bandName": "The Atavists",
+    "startTime": "19:35",
+    "endTime": "20:15",
+    "stage": "EcoFlow",
+    "bandId": "222"
+  },
+  {
+    "day": 5,
+    "bandName": "White Fruit Honey",
+    "startTime": "20:15",
+    "endTime": "21:00",
+    "stage": "Reflex",
+    "bandId": "218"
+  },
+  {
+    "day": 5,
+    "bandName": "Reflections of Karma",
+    "startTime": "20:20",
+    "endTime": "21:05",
+    "stage": "Petr Svoboda",
+    "bandId": "205"
+  },
+  {
+    "day": 5,
+    "bandName": "Iron Maiden",
+    "startTime": "20:40",
+    "endTime": "22:50",
+    "stage": "Mastercard",
+    "bandId": "190"
+  },
+  {
+    "day": 5,
+    "bandName": "Rain City Drive",
+    "startTime": "21:00",
+    "endTime": "21:45",
+    "stage": "CT Art",
+    "bandId": "212"
+  },
+  {
+    "day": 5,
+    "bandName": "Midrift",
+    "startTime": "22:00",
+    "endTime": "22:45",
+    "stage": "Petr Svoboda",
+    "bandId": "206"
+  },
+  {
+    "day": 5,
+    "bandName": "God Is An Astronaut",
+    "startTime": "23:00",
+    "endTime": "00:00",
+    "stage": "E2",
+    "bandId": "200"
+  },
+  {
+    "day": 5,
+    "bandName": "Scene Queen",
+    "startTime": "23:15",
+    "endTime": "00:00",
+    "stage": "CT Art",
+    "bandId": "213"
+  },
+  {
+    "day": 5,
+    "bandName": "N.O.H.A.",
+    "startTime": "23:15",
+    "endTime": "00:00",
+    "stage": "EcoFlow",
+    "bandId": "223"
+  }
+]
