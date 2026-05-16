@@ -192,7 +192,7 @@ function App() {
             )}
           </div>
           <button class="toggle-button" onClick=${() => setViewMode(show)}>
-            Show: ${show === "all" ? "All Bands" : "My Selection"}
+            Show ${show === "all" ? "my selection" : "all bands"}
           </button>
           <button class="toggle-button" onClick=${() => setDarkMode(!darkMode)}>
             ${darkMode ? "☀️ Light" : "🌙 Dark"}
