@@ -172,7 +172,7 @@ function App() {
             onClick=${() => setControlsExpanded(!controlsExpanded)}
             title=${controlsExpanded ? "Close settings" : "Open settings"}
           >
-            ${controlsExpanded ? "✕" : "⚙️"}
+            ⚙️
           </button>
         </div>
 

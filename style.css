@@ -11,7 +11,8 @@
     --active-day-text: #fff;
     --conflict-bg: #ffebee;
     --selected-bg: #e8f5e9;
-    --settings-right-offset: 20px;
+    --controls-top: 75px;
+    --control-border-width: 2px;
 }
 
 .dark-mode {
@@ -76,14 +77,14 @@ h2 {
 
 .controls {
     position: fixed;
-    top: 25px;
-    right: var(--settings-right-offset);
+    top: var(--controls-top);
+    right: 25px;
     background: var(--control-bg);
     padding: 20px;
-    border: 3px solid var(--control-border);
+    border: var(--control-border-width) solid var(--control-border);
     z-index: 1000;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
+    border-radius: 4px;
     display: flex;
     flex-direction: column;
     contain: layout;
@@ -93,17 +94,13 @@ h2 {
     width: 50px;
     height: 50px;
     padding: 0;
-    top: 25px;
+    top: calc(var(--control-border-width) + 20px);
+    right: calc(var(--control-border-width) + 22px);
     bottom: auto;
-    right: var(--settings-right-offset);
-    border-radius: 8px;
     overflow: hidden;
     justify-content: center;
     align-items: center;
-}
-
-.controls.collapsed:hover {
-    background: var(--button-bg);
+    border: none;
 }
 
 .controls-header {
@@ -149,8 +146,8 @@ h2 {
 
 .collapse-toggle.expanded {
     position: relative;
-    top: -20px;
-    right: -20px;
+    top: calc(var(--controls-top) * -1);
+    right: -23px;
     height: 50px;
 }
 
@@ -187,7 +184,6 @@ h2 {
     border: 1px solid var(--card-border);
     background: var(--button-bg);
     color: var(--button-text);
-    max-width: 245px;
     width: 100%;
     box-sizing: border-box;
 }
