@@ -69,8 +69,6 @@ h2 {
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    max-width: 90vw;
-    width: 350px;
 }
 
 .controls.collapsed {
@@ -171,7 +169,7 @@ h2 {
     border: 1px solid var(--card-border);
     background: var(--button-bg);
     color: var(--button-text);
-    max-width: 315px;
+    max-width: 245px;
     width: 100%;
     box-sizing: border-box;
 }
