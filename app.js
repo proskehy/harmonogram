@@ -154,8 +154,8 @@ function App() {
     if (window.innerWidth <= 600) setControlsExpanded(false);
   };
 
-  const setViewMode = (d) => {
-    setShow(show === "all" ? "selected" : "all");
+  const setViewMode = (currentShow) => {
+    setShow(currentShow === "all" ? "selected" : "all");
     scrollToDay(1);
   };
 
@@ -191,7 +191,7 @@ function App() {
               `,
             )}
           </div>
-          <button class="toggle-button" onClick=${() => setViewMode()}>
+          <button class="toggle-button" onClick=${() => setViewMode(show)}>
             Show: ${show === "all" ? "All Bands" : "My Selection"}
           </button>
           <button class="toggle-button" onClick=${() => setDarkMode(!darkMode)}>
