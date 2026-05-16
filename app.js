@@ -151,7 +151,7 @@ function App() {
   const scrollToDay = (d) => {
     const el = document.getElementById(`day-${d}`);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: "instant" });
     }
     if (window.innerWidth <= 600) setControlsExpanded(false);
   };
