@@ -150,13 +150,15 @@ function App() {
 
   const scrollToDay = (d) => {
     const el = document.getElementById(`day-${d}`);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
     if (window.innerWidth <= 600) setControlsExpanded(false);
   };
 
   const setViewMode = (currentShow) => {
-    setShow(currentShow === "all" ? "selected" : "all");
     scrollToDay(1);
+    setTimeout(() => setShow(currentShow === "all" ? "selected" : "all"), 0);
   };
 
   return html`
@@ -212,7 +214,7 @@ function App() {
             ${showDayHeader
               ? html`<h2
                   id="day-${band.day}"
-                  style="margin-top: 30px; border-bottom: 2px solid var(--active-day-bg); padding-bottom: 5px;"
+                  style="margin-top: 20px; border-bottom: 2px solid var(--active-day-bg); padding-bottom: 5px;"
                 >
                   Day ${band.day}
                 </h2>`
