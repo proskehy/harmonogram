@@ -162,7 +162,7 @@ function App() {
   };
 
   return html`
-    <div>
+    <div id="content">
       <div class="controls ${controlsExpanded ? "" : "collapsed"}">
         <div class="controls-header ${controlsExpanded ? "expanded" : ""}">
           <button

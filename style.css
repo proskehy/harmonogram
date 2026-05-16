@@ -33,6 +33,17 @@
     justify-content: center;
 }
 
+#content {
+    width: 100%;
+}
+
+@media (min-width: 570px) {
+    #content {
+        min-width: 520px;
+        width: auto;
+    }
+}
+
 body {
     font-family: sans-serif;
     padding: 0px 20px;
