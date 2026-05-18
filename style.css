@@ -68,6 +68,9 @@ body {
     gap: 30px;
     padding-bottom: 40px;
     min-height: 92vh;
+    margin-top: calc(
+        var(--search-bar-height) + calc(2 * var(--control-buttons-padding))
+    );
 }
 
 .button {
@@ -132,7 +135,7 @@ body {
 
 .control-buttons {
     background-color: var(--bg-color);
-    padding: var(--control-buttons-padding) 0px;
+    padding: var(--control-buttons-padding);
     display: flex;
     gap: 8px;
     position: relative;
@@ -151,9 +154,11 @@ body {
 }
 
 .top-bar {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
+    width: -webkit-fill-available;
+    right: 0;
 }
 
 .search-bar {
