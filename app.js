@@ -1,6 +1,22 @@
 import { h, render } from "https://esm.sh/preact";
-import { useState, useEffect } from "https://esm.sh/preact/hooks";
+import { useState, useEffect, useMemo } from "https://esm.sh/preact/hooks";
 import htm from "https://esm.sh/htm";
+
+const dayToName = {
+  1: "Středa",
+  2: "Čtvrtek",
+  3: "Pátek",
+  4: "Sobota",
+  5: "Neděle",
+};
+
+const dayToDate = {
+  1: "10. 6.",
+  2: "11. 6.",
+  3: "12. 6.",
+  4: "13. 6.",
+  5: "14. 6.",
+};
 
 // Initialize htm to work with Preact's h function
 const html = htm.bind(h);
@@ -21,7 +37,7 @@ function getShowFromUrl() {
 // Helper: Read dark mode from URL
 function getDarkModeFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  return params.get("dark") === "1" || "dark";
+  return params.get("dark") === "1" || "1";
 }
 
 // Helper: Convert "HH:mm" to a comparable value, treating 0:00-6:00 as late night
@@ -48,7 +64,6 @@ function App() {
   const [darkMode, setDarkMode] = useState(getDarkModeFromUrl);
   const [search, setSearch] = useState("");
   const [harmonogram, setHarmonogram] = useState([]);
-  const [controlsExpanded, setControlsExpanded] = useState(false);
 
   // Fetch harmonogram data
   useEffect(() => {
@@ -111,28 +126,30 @@ function App() {
     }
   };
 
-  const filteredBands = harmonogram.filter((band) => {
-    const isSelected = ids.includes(band.bandId.toString());
-    const matchesSearch = band.bandName
-      .toLowerCase()
-      .includes(search.toLowerCase());
+  const [bands, daysWithItems] = useMemo(() => {
+    const daysWithItems = new Set([]);
+    const filtered = harmonogram.filter((band) => {
+      if (band.active === false) return false;
 
-    if (!matchesSearch) return false;
-    if (band.active === false) return false;
+      const matchesSearch = band.bandName
+        .toLowerCase()
+        .includes(search.toLowerCase());
+      if (!matchesSearch) return false;
 
-    if (show === "selected") {
-      return isSelected;
-    }
-    return true; // Show all days
-  });
+      const isSelected = ids.includes(band.bandId.toString());
+      if (show === "selected" && !isSelected) return false;
 
-  // Sort bands by day, then start time
-  const sortedBands = [...filteredBands].sort((a, b) => {
-    if (a.day !== b.day) {
-      return a.day - b.day;
-    }
-    return getTimeValue(a.startTime) - getTimeValue(b.startTime);
-  });
+      daysWithItems.add(band.day);
+      return true;
+    });
+    const sorted = filtered.sort((a, b) => {
+      if (a.day !== b.day) {
+        return a.day - b.day;
+      }
+      return getTimeValue(a.startTime) - getTimeValue(b.startTime);
+    });
+    return [sorted, daysWithItems];
+  }, [harmonogram, ids, search, show]);
 
   const selectedBands = harmonogram.filter((b) =>
     ids.includes(b.bandId.toString()),
@@ -149,11 +166,10 @@ function App() {
   };
 
   const scrollToDay = (d) => {
-    const el = document.getElementById(`day-${d}`);
+    const el = document.getElementById(`section-${d}`);
     if (el) {
       el.scrollIntoView({ behavior: "instant" });
     }
-    if (window.innerWidth <= 600) setControlsExpanded(false);
   };
 
   const setViewMode = (currentShow) => {
@@ -163,110 +179,116 @@ function App() {
 
   return html`
     <div id="content">
-      <div class="controls ${controlsExpanded ? "" : "collapsed"}">
-        <div class="controls-header ${controlsExpanded ? "expanded" : ""}">
-          <button
-            class="toggle-button collapse-toggle ${controlsExpanded
-              ? "expanded"
-              : ""}"
-            onClick=${() => setControlsExpanded(!controlsExpanded)}
-            title=${controlsExpanded ? "Close settings" : "Open settings"}
-          >
-            ⚙️
-          </button>
-        </div>
-
-        <div class="controls-content">
-          <input
-            type="text"
-            placeholder="Search for a band..."
-            value=${search}
-            onInput=${(e) => setSearch(e.target.value)}
-            class="search-input"
-          />
-          <div class="day-buttons">
-            ${[1, 2, 3, 4, 5].map(
-              (d) => html`
-                <button class="day-button" onClick=${() => scrollToDay(d)}>
-                  Day ${d}
-                </button>
-              `,
-            )}
+      <div class="top-bar">
+        <div class="control-buttons">
+          <div class="search-bar">
+            <input
+              id="search-input"
+              type="text"
+              placeholder="Search"
+              value=${search}
+              onInput=${(e) => setSearch(e.target.value)}
+              class="search-input"
+            />
           </div>
-          <button class="toggle-button" onClick=${() => setViewMode(show)}>
-            Show ${show === "all" ? "my selection" : "all bands"}
+          <button
+            class="button control-btn ${show === "selected"
+              ? "control-selected"
+              : ""}"
+            onClick=${() => setViewMode(show)}
+          >
+            ⭐
           </button>
-          <button class="toggle-button" onClick=${() => setDarkMode(!darkMode)}>
-            ${darkMode ? "☀️ Light" : "🌙 Dark"}
+          <button
+            class="button control-btn ${darkMode ? "control-selected" : ""}"
+            onClick=${() => setDarkMode(!darkMode)}
+          >
+            🌙
           </button>
         </div>
       </div>
 
       <div class="list-layout">
-        ${sortedBands.map((band, index) => {
-          const isSelected = ids.includes(band.bandId.toString());
-          const conflictingBands = getConflictingBands(band);
-          const conflict = conflictingBands.length > 0;
-          const showDayHeader =
-            index === 0 || sortedBands[index - 1].day !== band.day;
+        ${[1, 2, 3, 4, 5].map((d) =>
+          daysWithItems.has(d)
+            ? html`
+                <section class="scroll-section" id="section-${d}">
+                  <h2>${dayToName[d]} ${dayToDate[d]}</h2>
+                  ${bands.map((band) => {
+                    if (band.day !== d) return null;
+                    const isSelected =
+                      show === "selected" ||
+                      ids.includes(band.bandId.toString());
+                    const conflictingBands = getConflictingBands(band);
+                    const conflict = conflictingBands.length > 0;
 
-          return html`
-            ${showDayHeader
-              ? html`<h2
-                  id="day-${band.day}"
-                  style="margin-top: 20px; border-bottom: 2px solid var(--active-day-bg); padding-bottom: 5px;"
-                >
-                  Day ${band.day}
-                </h2>`
-              : ""}
-            <div
-              class="card"
-              key=${band.bandId}
-              onClick=${() => toggleBandSelection(band)}
-              style="cursor: pointer; border-left: 5px solid ${isSelected
-                ? conflict
-                  ? "#f44336"
-                  : "#4CAF50"
-                : "#ccc"}; background: ${isSelected
-                ? conflict
-                  ? "var(--conflict-bg)"
-                  : "var(--selected-bg)"
-                : "var(--card-bg)"};"
-            >
-              <strong>${band.bandName}</strong>
-              ${conflict
-                ? html`<span
-                    style="color: #f44336; font-size: 0.8em; margin-left: 10px;"
-                  >
-                    ${"⚠️ Conflict: "}
-                    ${conflictingBands
-                      .map((other) => {
-                        const range = getTimeRange(band);
-                        const otherRange = getTimeRange(other);
-                        const overlap =
-                          Math.min(range.end, otherRange.end) -
-                          Math.max(range.start, otherRange.start);
-                        const duration = range.end - range.start;
-                        const percentage = Math.round(
-                          (overlap / duration) * 100,
-                        );
-                        return `${other.bandName} (${percentage}%)`;
-                      })
-                      .join(", ")}
-                  </span>`
-                : ""}
-              <br />
-              <span
-                >${band.startTime} - ${band.endTime} |
-                ${` Stage: ${band.stage}`}</span
-              >
-            </div>
-          `;
-        })}
-        ${sortedBands.length === 0 &&
+                    return html`
+                      <div
+                        class="card"
+                        key=${band.bandId}
+                        onClick=${() => toggleBandSelection(band)}
+                        style="cursor: pointer; border-left: 5px solid ${isSelected
+                          ? conflict
+                            ? "#f44336"
+                            : "var(--selected)"
+                          : "#ccc"}; background: ${isSelected
+                          ? conflict
+                            ? "var(--conflict-bg)"
+                            : "var(--selected-bg)"
+                          : "var(--card-bg)"};"
+                      >
+                        <strong>${band.bandName}</strong>
+                        ${conflict
+                          ? html`<span
+                              style="color: #f44336; font-size: 0.8em; margin-left: 10px;"
+                            >
+                              ${"⚠️ Conflict: "}
+                              ${conflictingBands
+                                .map((other) => {
+                                  const range = getTimeRange(band);
+                                  const otherRange = getTimeRange(other);
+                                  const overlap =
+                                    Math.min(range.end, otherRange.end) -
+                                    Math.max(range.start, otherRange.start);
+                                  const duration = range.end - range.start;
+                                  const percentage = Math.round(
+                                    (overlap / duration) * 100,
+                                  );
+                                  return `${other.bandName} (${percentage}%)`;
+                                })
+                                .join(", ")}
+                            </span>`
+                          : ""}
+                        <br />
+                        <span
+                          >${band.startTime} - ${band.endTime} |
+                          ${` Stage: ${band.stage}`}</span
+                        >
+                      </div>
+                    `;
+                  })}
+                </section>
+              `
+            : null,
+        )}
+        ${(bands.length === 0 || daysWithItems.size === 0) &&
         harmonogram.length > 0 &&
         html`<p>No bands found/selected.</p>`}
         ${harmonogram.length === 0 && html`<p>Loading harmonogram...</p>`}
+      </div>
+      <div class="days-tab">
+        ${[1, 2, 3, 4, 5].map(
+          (d) => html`
+            <button
+              key=${d}
+              style="width: 100%"
+              class="button day-button"
+              onClick=${() => scrollToDay(d)}
+            >
+              ${dayToDate[d]}
+            </button>
+          `,
+        )}
       </div>
     </div>
   `;
