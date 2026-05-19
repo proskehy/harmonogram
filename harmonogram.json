@@ -157,7 +157,8 @@
     "startTime": "18:05",
     "endTime": "18:50",
     "stage": "E2",
-    "bandId": "12"
+    "bandId": "12",
+    "active": false
   },
   {
     "day": 1,
