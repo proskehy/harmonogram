@@ -284,7 +284,7 @@
     "day": 1,
     "bandName": "Zuzaně Navarové do nebes",
     "startTime": "00:00",
-    "endTime": "01:30",
+    "endTime": "01:00",
     "stage": "Reflex",
     "bandId": "32"
   },
@@ -292,7 +292,7 @@
     "day": 1,
     "bandName": "Joey Valence & Brae",
     "startTime": "00:30",
-    "endTime": "02:00",
+    "endTime": "01:30",
     "stage": "E2",
     "bandId": "15"
   },
@@ -300,7 +300,7 @@
     "day": 1,
     "bandName": "Alyx Holcombe",
     "startTime": "00:30",
-    "endTime": "01:30",
+    "endTime": "02:00",
     "stage": "CT Art",
     "bandId": "30"
   },
@@ -366,7 +366,8 @@
     "startTime": "12:40",
     "endTime": "13:25",
     "stage": "CT Art",
-    "bandId": "65"
+    "bandId": "65",
+    "active": false
   },
   {
     "day": 2,
@@ -394,6 +395,14 @@
   },
   {
     "day": 2,
+    "bandName": "Orchestr Ježkovy stopy",
+    "startTime": "13:10",
+    "endTime": "13:55",
+    "stage": "CT Art",
+    "bandId": "66"
+  },
+  {
+    "day": 2,
     "bandName": "Headliner: Hudební masakry",
     "startTime": "13:50",
     "endTime": "14:50",
@@ -418,11 +427,11 @@
   },
   {
     "day": 2,
-    "bandName": "Orchestr Ježkovy stopy",
-    "startTime": "14:10",
-    "endTime": "14:55",
+    "bandName": "ČT: Na dosah s Danielem Stachem",
+    "startTime": "14:40",
+    "endTime": "16:35",
     "stage": "CT Art",
-    "bandId": "66"
+    "bandId": "67"
   },
   {
     "day": 2,
@@ -455,14 +464,6 @@
     "endTime": "16:20",
     "stage": "Petr Svoboda",
     "bandId": "59"
-  },
-  {
-    "day": 2,
-    "bandName": "ČT: Na dosah s Danielem Stachem",
-    "startTime": "15:40",
-    "endTime": "16:35",
-    "stage": "CT Art",
-    "bandId": "67"
   },
   {
     "day": 2,
@@ -651,34 +652,34 @@
   {
     "day": 2,
     "bandName": "DeSade X Denoi",
-    "startTime": "23:00",
-    "endTime": "00:00",
+    "startTime": "23:15",
+    "endTime": "00:15",
     "stage": "Reflex",
     "bandId": "79"
   },
   {
     "day": 2,
-    "bandName": "Gleb",
+    "bandName": "Klubovna Afterparty",
     "startTime": "00:30",
-    "endTime": "01:30",
+    "endTime": "02:00",
+    "stage": "Reflex",
+    "bandId": "80"
+  },
+  {
+    "day": 2,
+    "bandName": "Gleb",
+    "startTime": "00:45",
+    "endTime": "01:45",
     "stage": "E2",
     "bandId": "56"
   },
   {
     "day": 2,
     "bandName": "The Prague Burlesque Show: Velvet Hammer",
-    "startTime": "00:30",
-    "endTime": "01:30",
+    "startTime": "00:45",
+    "endTime": "01:45",
     "stage": "CT Art",
     "bandId": "73"
-  },
-  {
-    "day": 2,
-    "bandName": "Klubovna Afterparty",
-    "startTime": "00:30",
-    "endTime": "01:30",
-    "stage": "Reflex",
-    "bandId": "80"
   },
   {
     "day": 3,
