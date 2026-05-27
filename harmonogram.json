@@ -153,6 +153,14 @@
   },
   {
     "day": 1,
+    "bandName": "H-Blockx",
+    "startTime": "18:05",
+    "endTime": "18:50",
+    "stage": "E2",
+    "bandId": "226"
+  },
+  {
+    "day": 1,
     "bandName": "Static-X",
     "startTime": "18:05",
     "endTime": "18:50",
@@ -303,6 +311,14 @@
     "endTime": "02:00",
     "stage": "CT Art",
     "bandId": "30"
+  },
+  {
+    "day": 2,
+    "bandName": "Shluk buněk Talk",
+    "startTime": "11:10",
+    "endTime": "12:00",
+    "stage": "Reflex",
+    "bandId": "227"
   },
   {
     "day": 2,
@@ -595,6 +611,14 @@
   },
   {
     "day": 2,
+    "bandName": "Cintorini",
+    "startTime": "20:40",
+    "endTime": "21:20",
+    "stage": "EcoFlow",
+    "bandId": "228"
+  },
+  {
+    "day": 2,
     "bandName": "Deki Alem",
     "startTime": "20:50",
     "endTime": "21:35",
@@ -688,6 +712,14 @@
     "endTime": "12:20",
     "stage": "CT Art",
     "bandId": "113"
+  },
+  {
+    "day": 3,
+    "bandName": "Klamat",
+    "startTime": "11:25",
+    "endTime": "11:55",
+    "stage": "Petr Svoboda",
+    "bandId": "229"
   },
   {
     "day": 3,
@@ -1115,6 +1147,14 @@
   },
   {
     "day": 4,
+    "bandName": "Jet8",
+    "startTime": "11:45",
+    "endTime": "12:30",
+    "stage": "Petr Svoboda",
+    "bandId": "230"
+  },
+  {
+    "day": 4,
     "bandName": "ČT: Taneční škola StarDance",
     "startTime": "12:20",
     "endTime": "13:05",
@@ -1395,6 +1435,14 @@
   },
   {
     "day": 4,
+    "bandName": "The Complication",
+    "startTime": "21:50",
+    "endTime": "22:35",
+    "stage": "Petr Svoboda",
+    "bandId": "231"
+  },
+  {
+    "day": 4,
     "bandName": "Hopes",
     "startTime": "21:50",
     "endTime": "22:35",
@@ -1448,6 +1496,14 @@
     "endTime": "01:00",
     "stage": "RFP",
     "bandId": "147"
+  },
+  {
+    "day": 4,
+    "bandName": "Mindgaze",
+    "startTime": "23:45",
+    "endTime": "00:45",
+    "stage": "EcoFlow",
+    "bandId": "232"
   },
   {
     "day": 4,
@@ -1792,6 +1848,14 @@
     "endTime": "00:00",
     "stage": "CT Art",
     "bandId": "213"
+  },
+  {
+    "day": 5,
+    "bandName": "Safari Duo (80s & 90s Rock)",
+    "startTime": "23:15",
+    "endTime": "00:00",
+    "stage": "Reflex",
+    "bandId": "233"
   },
   {
     "day": 5,
