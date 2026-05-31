@@ -55,19 +55,42 @@ body {
 }
 
 .card {
-    display: block;
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 10px;
     margin: 5px 0;
     border: 1px solid var(--card-border);
     background: var(--card-bg);
     border-radius: 4px;
+    cursor: pointer;
+    border-left: 5px solid #ccc;
     scroll-margin-top: calc(
         var(--search-bar-height) + calc(2 * var(--control-buttons-padding)) + var(--day-heading-height)
     );
 }
 
+.card strong {
+    font-size: 1.1em;
+}
+
+.card-selected {
+    border-left-color: var(--selected);
+    background: var(--selected-bg);
+}
+
+.card-conflict {
+    border-left-color: #f44336;
+    background: var(--conflict-bg);
+}
+
 .card-past {
     opacity: 0.45;
+}
+
+.conflict-label {
+    color: #f44336;
+    font-size: 0.8em;
 }
 
 .list-layout {
@@ -114,6 +137,7 @@ body {
 }
 
 .days-tab {
+    z-index: 2;
     bottom: 0;
     display: flex;
     width: inherit;
@@ -132,14 +156,14 @@ body {
 
 .scroll-section h2 {
     z-index: 1;
-    padding: 4px 8px;
+    padding: 8px 8px 4px;
     position: sticky;
     top: calc(
         var(--search-bar-height) + calc(2 * var(--control-buttons-padding))
     );
     background-color: var(--card-bg);
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    line-height: 1.2;
 }
 
 .control-buttons {

@@ -2,59 +2,36 @@ import { h, render } from "https://esm.sh/preact";
 import { useState, useEffect, useMemo, useRef } from "https://esm.sh/preact/hooks";
 import htm from "https://esm.sh/htm";
 
-const dayToName = {
-  1: "Středa",
-  2: "Čtvrtek",
-  3: "Pátek",
-  4: "Sobota",
-  5: "Neděle",
-};
+const DAYS = [
+  { id: 1, name: "Středa", date: "10. 6.", calendarDate: 10 },
+  { id: 2, name: "Čtvrtek", date: "11. 6.", calendarDate: 11 },
+  { id: 3, name: "Pátek", date: "12. 6.", calendarDate: 12 },
+  { id: 4, name: "Sobota", date: "13. 6.", calendarDate: 13 },
+  { id: 5, name: "Neděle", date: "14. 6.", calendarDate: 14 },
+];
 
-const dayToDate = {
-  1: "10. 6.",
-  2: "11. 6.",
-  3: "12. 6.",
-  4: "13. 6.",
-  5: "14. 6.",
-};
-
-// Map festival day number to calendar date (June 2025)
-const dayToCalendarDate = {
-  1: 10,
-  2: 11,
-  3: 12,
-  4: 13,
-  5: 14,
-};
-
-// Initialize htm to work with Preact's h function
 const html = htm.bind(h);
 
-// Helper: Read comma-delimited IDs from the URL
 function getIdsFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const idsString = params.get("ids");
   return idsString ? idsString.split(",").filter(Boolean) : [];
 }
 
-// Helper: Read show mode from the URL
 function getShowFromUrl() {
   const params = new URLSearchParams(window.location.search);
   return params.get("show") || "all";
 }
 
-// Helper: Read dark mode from URL
 function getDarkModeFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const dark = params.get("dark");
   return dark === null ? true : dark === "1";
 }
 
-// Helper: Convert "HH:mm" to a comparable value, treating 0:00-6:00 as late night
 function getTimeValue(timeStr) {
   const [hours, minutes] = timeStr.split(":").map(Number);
   let totalMinutes = hours * 60 + minutes;
-  // If time is between 0:00 and 6:00, add 24 hours worth of minutes
   if (hours < 6) {
     totalMinutes += 24 * 60;
   }
@@ -70,13 +47,23 @@ function getTimeRange(band) {
 
 function getBandEndDate(band) {
   const [hours, minutes] = band.endTime.split(":").map(Number);
-  const calDay = dayToCalendarDate[band.day];
-  const actualDay = hours < 6 ? calDay + 1 : calDay;
+  const day = DAYS[band.day - 1];
+  const actualDay = hours < 6 ? day.calendarDate + 1 : day.calendarDate;
   return new Date(2026, 5, actualDay, hours, minutes);
 }
 
 function isBandPast(band, now) {
   return now > getBandEndDate(band);
+}
+
+function getOverlapPercentage(band, other) {
+  const range = getTimeRange(band);
+  const otherRange = getTimeRange(other);
+  const overlap =
+    Math.min(range.end, otherRange.end) -
+    Math.max(range.start, otherRange.start);
+  const duration = range.end - range.start;
+  return Math.round((overlap / duration) * 100);
 }
 
 function App() {
@@ -88,7 +75,6 @@ function App() {
   const [now] = useState(() => new Date());
   const hasScrolledRef = useRef(false);
 
-  // Fetch harmonogram data
   useEffect(() => {
     fetch("./harmonogram.json")
       .then((res) => res.json())
@@ -96,7 +82,10 @@ function App() {
       .catch((err) => console.error("Error loading harmonogram:", err));
   }, []);
 
-  // Synchronize state changes back to URL
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode", darkMode);
+  }, [darkMode]);
+
   useEffect(() => {
     const url = new URL(window.location);
 
@@ -110,18 +99,10 @@ function App() {
     url.searchParams.set("dark", darkMode ? "1" : "0");
 
     window.history.replaceState({}, "", url);
-
-    // Toggle dark mode class on body
-    if (darkMode) {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
   }, [ids, show, darkMode]);
 
   const toggleBandSelection = (band) => {
-    const idStr = band.bandId.toString();
-    if (ids.includes(idStr)) {
+    if (ids.includes(band.bandId)) {
       if (show === "selected") {
         if (
           !window.confirm(
@@ -131,9 +112,9 @@ function App() {
           return;
         }
       }
-      setIds(ids.filter((id) => id !== idStr));
+      setIds(ids.filter((id) => id !== band.bandId));
     } else {
-      setIds([...ids, idStr]);
+      setIds([...ids, band.bandId]);
     }
   };
 
@@ -148,8 +129,7 @@ function App() {
         .includes(search.toLowerCase());
       if (!matchesSearch) return false;
 
-      const isSelected = ids.includes(band.bandId.toString());
-      if (show === "selected" && !isSelected) return false;
+      if (show === "selected" && !ids.includes(band.bandId)) return false;
 
       daysWithItems.add(band.day);
       return true;
@@ -168,12 +148,12 @@ function App() {
   }, [harmonogram, ids, search, show]);
 
   const selectedBands = useMemo(
-    () => harmonogram.filter((b) => ids.includes(b.bandId.toString())),
+    () => harmonogram.filter((b) => ids.includes(b.bandId)),
     [harmonogram, ids],
   );
 
   const getConflictingBands = (band) => {
-    if (!ids.includes(band.bandId.toString())) return [];
+    if (!ids.includes(band.bandId)) return [];
     if (selectedBands.length < 2) return [];
     const range = getTimeRange(band);
     return selectedBands.filter((other) => {
@@ -191,8 +171,8 @@ function App() {
   };
 
   const scrollToCurrentBand = () => {
-    for (const d of [1, 2, 3, 4, 5]) {
-      const dayBands = bandsByDay[d];
+    for (const day of DAYS) {
+      const dayBands = bandsByDay[day.id];
       if (!dayBands) continue;
       for (const band of dayBands) {
         if (!isBandPast(band, now)) {
@@ -216,6 +196,13 @@ function App() {
     const nextShow = currentShow === "all" ? "selected" : "all";
     setShow(nextShow);
     setTimeout(() => scrollToCurrentBand(), 0);
+  };
+
+  const getCardClass = (isSelected, conflict, past) => {
+    let cls = "card";
+    if (past) cls += " card-past";
+    if (isSelected) cls += conflict ? " card-conflict" : " card-selected";
+    return cls;
   };
 
   return html`
@@ -250,60 +237,40 @@ function App() {
       </div>
 
       <div class="list-layout">
-        ${[1, 2, 3, 4, 5].map((d) =>
-          daysWithItems.has(d)
+        ${DAYS.map((day) =>
+          daysWithItems.has(day.id)
             ? html`
-                <section class="scroll-section" id="section-${d}">
-                  <h2>${dayToName[d]} ${dayToDate[d]}</h2>
-                  ${(bandsByDay[d] || []).map((band) => {
-                    const isSelected = ids.includes(band.bandId.toString());
+                <section class="scroll-section" id="section-${day.id}">
+                  <h2>${day.name} ${day.date}</h2>
+                  ${(bandsByDay[day.id] || []).map((band) => {
+                    const isSelected = ids.includes(band.bandId);
                     const conflictingBands = getConflictingBands(band);
                     const conflict = conflictingBands.length > 0;
                     const past = isBandPast(band, now);
 
                     return html`
                       <div
-                        class="card ${past ? "card-past" : ""}"
+                        class=${getCardClass(isSelected, conflict, past)}
                         id="band-${band.bandId}"
                         key=${band.bandId}
                         onClick=${() => toggleBandSelection(band)}
-                        style="cursor: pointer; border-left: 5px solid ${isSelected
-                          ? conflict
-                            ? "#f44336"
-                            : "var(--selected)"
-                          : "#ccc"}; background: ${isSelected
-                          ? conflict
-                            ? "var(--conflict-bg)"
-                            : "var(--selected-bg)"
-                          : "var(--card-bg)"};"
                       >
                         <strong>${band.bandName}</strong>
-                        ${conflict
-                          ? html`<span
-                              style="color: #f44336; font-size: 0.8em; margin-left: 10px;"
-                            >
-                              ${"⚠️ Conflict: "}
-                              ${conflictingBands
-                                .map((other) => {
-                                  const range = getTimeRange(band);
-                                  const otherRange = getTimeRange(other);
-                                  const overlap =
-                                    Math.min(range.end, otherRange.end) -
-                                    Math.max(range.start, otherRange.start);
-                                  const duration = range.end - range.start;
-                                  const percentage = Math.round(
-                                    (overlap / duration) * 100,
-                                  );
-                                  return `${other.bandName} (${percentage}%)`;
-                                })
-                                .join(", ")}
-                            </span>`
-                          : ""}
-                        <br />
                         <span
                           >${band.startTime} - ${band.endTime} |
                           ${` Stage: ${band.stage}`}</span
                         >
+                        ${conflict
+                          ? html`<span class="conflict-label">
+                              ${"⚠️ Conflict: "}
+                              ${conflictingBands
+                                .map(
+                                  (other) =>
+                                    `${other.bandName} (${getOverlapPercentage(band, other)}%)`,
+                                )
+                                .join(", ")}
+                            </span>`
+                          : ""}
                       </div>
                     `;
                   })}
@@ -311,21 +278,21 @@ function App() {
               `
             : null,
         )}
-        ${(daysWithItems.size === 0) &&
+        ${daysWithItems.size === 0 &&
         harmonogram.length > 0 &&
         html`<p>No bands found/selected.</p>`}
         ${harmonogram.length === 0 && html`<p>Loading harmonogram...</p>`}
       </div>
       <div class="days-tab">
-        ${[1, 2, 3, 4, 5].map(
-          (d) => html`
+        ${DAYS.map(
+          (day) => html`
             <button
-              key=${d}
+              key=${day.id}
               style="width: 100%"
               class="button day-button"
-              onClick=${() => scrollToDay(d)}
+              onClick=${() => scrollToDay(day.id)}
             >
-              ${dayToDate[d]}
+              ${day.date}
             </button>
           `,
         )}
