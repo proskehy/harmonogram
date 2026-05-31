@@ -12,21 +12,21 @@ const DAYS = [
 
 const html = htm.bind(h);
 
-function getIdsFromUrl() {
+function getFavoriteIdsFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  const idsString = params.get("ids");
+  const idsString = params.get("favoriteIds");
   return idsString ? idsString.split(",").filter(Boolean) : [];
 }
 
-function getShowFromUrl() {
+function getViewFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  return params.get("show") || "all";
+  return params.get("view") || "all";
 }
 
 function getDarkModeFromUrl() {
   const params = new URLSearchParams(window.location.search);
   const dark = params.get("dark");
-  return dark === null ? true : dark === "1";
+  return dark === null ? true : dark === "true";
 }
 
 function getTimeValue(timeStr) {
@@ -67,8 +67,8 @@ function getOverlapPercentage(band, other) {
 }
 
 function App() {
-  const [ids, setIds] = useState(getIdsFromUrl);
-  const [show, setShow] = useState(getShowFromUrl);
+  const [favoriteIds, setFavoriteIds] = useState(getFavoriteIdsFromUrl);
+  const [view, setView] = useState(getViewFromUrl);
   const [darkMode, setDarkMode] = useState(getDarkModeFromUrl);
   const [search, setSearch] = useState("");
   const [harmonogram, setHarmonogram] = useState([]);
@@ -89,21 +89,21 @@ function App() {
   useEffect(() => {
     const url = new URL(window.location);
 
-    if (ids.length > 0) {
-      url.searchParams.set("ids", ids.join(","));
+    if (favoriteIds.length > 0) {
+      url.searchParams.set("favoriteIds", favoriteIds.join(","));
     } else {
-      url.searchParams.delete("ids");
+      url.searchParams.delete("favoriteIds");
     }
 
-    url.searchParams.set("show", show);
-    url.searchParams.set("dark", darkMode ? "1" : "0");
+    url.searchParams.set("view", view);
+    url.searchParams.set("dark", darkMode ? "true" : "false");
 
     window.history.replaceState({}, "", url);
-  }, [ids, show, darkMode]);
+  }, [favoriteIds, view, darkMode]);
 
-  const toggleBandSelection = (band) => {
-    if (ids.includes(band.bandId)) {
-      if (show === "selected") {
+  const toggleFavorite = (band) => {
+    if (favoriteIds.includes(band.bandId)) {
+      if (view === "favorites") {
         if (
           !window.confirm(
             `Are you sure you want to remove ${band.bandName} from your selection?`,
@@ -112,14 +112,14 @@ function App() {
           return;
         }
       }
-      setIds(ids.filter((id) => id !== band.bandId));
+      setFavoriteIds(favoriteIds.filter((id) => id !== band.bandId));
     } else {
-      setIds([...ids, band.bandId]);
+      setFavoriteIds([...favoriteIds, band.bandId]);
     }
   };
 
-  const [bandsByDay, daysWithItems] = useMemo(() => {
-    const daysWithItems = new Set([]);
+  const [bandsByDay, daysWithBands] = useMemo(() => {
+    const daysWithBands = new Set([]);
     const grouped = {};
     const filtered = harmonogram.filter((band) => {
       if (band.active === false) return false;
@@ -129,9 +129,10 @@ function App() {
         .includes(search.toLowerCase());
       if (!matchesSearch) return false;
 
-      if (show === "selected" && !ids.includes(band.bandId)) return false;
+      if (view === "favorites" && !favoriteIds.includes(band.bandId))
+        return false;
 
-      daysWithItems.add(band.day);
+      daysWithBands.add(band.day);
       return true;
     });
     filtered.sort((a, b) => {
@@ -144,19 +145,19 @@ function App() {
       if (!grouped[band.day]) grouped[band.day] = [];
       grouped[band.day].push(band);
     }
-    return [grouped, daysWithItems];
-  }, [harmonogram, ids, search, show]);
+    return [grouped, daysWithBands];
+  }, [harmonogram, favoriteIds, search, view]);
 
-  const selectedBands = useMemo(
-    () => harmonogram.filter((b) => ids.includes(b.bandId)),
-    [harmonogram, ids],
+  const favoriteBands = useMemo(
+    () => harmonogram.filter((b) => favoriteIds.includes(b.bandId)),
+    [harmonogram, favoriteIds],
   );
 
   const getConflictingBands = (band) => {
-    if (!ids.includes(band.bandId)) return [];
-    if (selectedBands.length < 2) return [];
+    if (!favoriteIds.includes(band.bandId)) return [];
+    if (favoriteBands.length < 2) return [];
     const range = getTimeRange(band);
-    return selectedBands.filter((other) => {
+    return favoriteBands.filter((other) => {
       if (other.bandId === band.bandId || other.day !== band.day) return false;
       const otherRange = getTimeRange(other);
       return range.start < otherRange.end && otherRange.start < range.end;
@@ -192,16 +193,16 @@ function App() {
     }
   }, [harmonogram]);
 
-  const setViewMode = (currentShow) => {
-    const nextShow = currentShow === "all" ? "selected" : "all";
-    setShow(nextShow);
+  const toggleView = () => {
+    const nextView = view === "all" ? "favorites" : "all";
+    setView(nextView);
     setTimeout(() => scrollToCurrentBand(), 0);
   };
 
-  const getCardClass = (isSelected, conflict, past) => {
+  const getCardClass = (isFavorite, conflict, past) => {
     let cls = "card";
     if (past) cls += " card-past";
-    if (isSelected) cls += conflict ? " card-conflict" : " card-selected";
+    if (isFavorite) cls += conflict ? " card-conflict" : " card-selected";
     return cls;
   };
 
@@ -220,10 +221,10 @@ function App() {
             />
           </div>
           <button
-            class="button control-btn ${show === "selected"
+            class="button control-btn ${view === "favorites"
               ? "control-selected"
               : ""}"
-            onClick=${() => setViewMode(show)}
+            onClick=${toggleView}
           >
             ⭐
           </button>
@@ -238,22 +239,22 @@ function App() {
 
       <div class="list-layout">
         ${DAYS.map((day) =>
-          daysWithItems.has(day.id)
+          daysWithBands.has(day.id)
             ? html`
                 <section class="scroll-section" id="section-${day.id}">
                   <h2>${day.name} ${day.date}</h2>
                   ${(bandsByDay[day.id] || []).map((band) => {
-                    const isSelected = ids.includes(band.bandId);
+                    const isFavorite = favoriteIds.includes(band.bandId);
                     const conflictingBands = getConflictingBands(band);
                     const conflict = conflictingBands.length > 0;
                     const past = isBandPast(band, now);
 
                     return html`
                       <div
-                        class=${getCardClass(isSelected, conflict, past)}
+                        class=${getCardClass(isFavorite, conflict, past)}
                         id="band-${band.bandId}"
                         key=${band.bandId}
-                        onClick=${() => toggleBandSelection(band)}
+                        onClick=${() => toggleFavorite(band)}
                       >
                         <strong>${band.bandName}</strong>
                         <span
@@ -278,7 +279,7 @@ function App() {
               `
             : null,
         )}
-        ${daysWithItems.size === 0 &&
+        ${daysWithBands.size === 0 &&
         harmonogram.length > 0 &&
         html`<p>No bands found/selected.</p>`}
         ${harmonogram.length === 0 && html`<p>Loading harmonogram...</p>`}
