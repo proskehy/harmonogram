@@ -12,6 +12,7 @@
     --control-font-weight: 500;
     --search-bar-height: 50px;
     --control-buttons-padding: 10px;
+    --day-heading-height: 40px;
 }
 
 .dark-mode {
@@ -60,6 +61,13 @@ body {
     border: 1px solid var(--card-border);
     background: var(--card-bg);
     border-radius: 4px;
+    scroll-margin-top: calc(
+        var(--search-bar-height) + calc(2 * var(--control-buttons-padding)) + var(--day-heading-height)
+    );
+}
+
+.card-past {
+    opacity: 0.45;
 }
 
 .list-layout {
@@ -123,6 +131,7 @@ body {
 }
 
 .scroll-section h2 {
+    z-index: 1;
     padding: 4px 8px;
     position: sticky;
     top: calc(

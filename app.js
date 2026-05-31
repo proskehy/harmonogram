@@ -1,5 +1,5 @@
 import { h, render } from "https://esm.sh/preact";
-import { useState, useEffect, useMemo } from "https://esm.sh/preact/hooks";
+import { useState, useEffect, useMemo, useRef } from "https://esm.sh/preact/hooks";
 import htm from "https://esm.sh/htm";
 
 const dayToName = {
@@ -16,6 +16,15 @@ const dayToDate = {
   3: "12. 6.",
   4: "13. 6.",
   5: "14. 6.",
+};
+
+// Map festival day number to calendar date (June 2025)
+const dayToCalendarDate = {
+  1: 10,
+  2: 11,
+  3: 12,
+  4: 13,
+  5: 14,
 };
 
 // Initialize htm to work with Preact's h function
@@ -37,7 +46,8 @@ function getShowFromUrl() {
 // Helper: Read dark mode from URL
 function getDarkModeFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  return params.get("dark") === "1" || "1";
+  const dark = params.get("dark");
+  return dark === null ? true : dark === "1";
 }
 
 // Helper: Convert "HH:mm" to a comparable value, treating 0:00-6:00 as late night
@@ -58,12 +68,25 @@ function getTimeRange(band) {
   };
 }
 
+function getBandEndDate(band) {
+  const [hours, minutes] = band.endTime.split(":").map(Number);
+  const calDay = dayToCalendarDate[band.day];
+  const actualDay = hours < 6 ? calDay + 1 : calDay;
+  return new Date(2026, 5, actualDay, hours, minutes);
+}
+
+function isBandPast(band, now) {
+  return now > getBandEndDate(band);
+}
+
 function App() {
   const [ids, setIds] = useState(getIdsFromUrl);
   const [show, setShow] = useState(getShowFromUrl);
   const [darkMode, setDarkMode] = useState(getDarkModeFromUrl);
   const [search, setSearch] = useState("");
   const [harmonogram, setHarmonogram] = useState([]);
+  const [now] = useState(() => new Date());
+  const hasScrolledRef = useRef(false);
 
   // Fetch harmonogram data
   useEffect(() => {
@@ -96,18 +119,6 @@ function App() {
     }
   }, [ids, show, darkMode]);
 
-  // Handle back/forward browser navigation
-  useEffect(() => {
-    const handlePopState = () => {
-      setIds(getIdsFromUrl());
-      setShow(getShowFromUrl());
-      setDarkMode(getDarkModeFromUrl());
-    };
-
-    window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
-  }, []);
-
   const toggleBandSelection = (band) => {
     const idStr = band.bandId.toString();
     if (ids.includes(idStr)) {
@@ -126,8 +137,9 @@ function App() {
     }
   };
 
-  const [bands, daysWithItems] = useMemo(() => {
+  const [bandsByDay, daysWithItems] = useMemo(() => {
     const daysWithItems = new Set([]);
+    const grouped = {};
     const filtered = harmonogram.filter((band) => {
       if (band.active === false) return false;
 
@@ -142,21 +154,27 @@ function App() {
       daysWithItems.add(band.day);
       return true;
     });
-    const sorted = filtered.sort((a, b) => {
+    filtered.sort((a, b) => {
       if (a.day !== b.day) {
         return a.day - b.day;
       }
       return getTimeValue(a.startTime) - getTimeValue(b.startTime);
     });
-    return [sorted, daysWithItems];
+    for (const band of filtered) {
+      if (!grouped[band.day]) grouped[band.day] = [];
+      grouped[band.day].push(band);
+    }
+    return [grouped, daysWithItems];
   }, [harmonogram, ids, search, show]);
 
-  const selectedBands = harmonogram.filter((b) =>
-    ids.includes(b.bandId.toString()),
+  const selectedBands = useMemo(
+    () => harmonogram.filter((b) => ids.includes(b.bandId.toString())),
+    [harmonogram, ids],
   );
 
   const getConflictingBands = (band) => {
     if (!ids.includes(band.bandId.toString())) return [];
+    if (selectedBands.length < 2) return [];
     const range = getTimeRange(band);
     return selectedBands.filter((other) => {
       if (other.bandId === band.bandId || other.day !== band.day) return false;
@@ -172,9 +190,32 @@ function App() {
     }
   };
 
+  const scrollToCurrentBand = () => {
+    for (const d of [1, 2, 3, 4, 5]) {
+      const dayBands = bandsByDay[d];
+      if (!dayBands) continue;
+      for (const band of dayBands) {
+        if (!isBandPast(band, now)) {
+          const el = document.getElementById(`band-${band.bandId}`);
+          if (el) el.scrollIntoView({ behavior: "instant" });
+          return;
+        }
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (harmonogram.length === 0) return;
+    if (!hasScrolledRef.current) {
+      hasScrolledRef.current = true;
+      scrollToCurrentBand();
+    }
+  }, [harmonogram]);
+
   const setViewMode = (currentShow) => {
-    scrollToDay(1);
-    setTimeout(() => setShow(currentShow === "all" ? "selected" : "all"), 0);
+    const nextShow = currentShow === "all" ? "selected" : "all";
+    setShow(nextShow);
+    setTimeout(() => scrollToCurrentBand(), 0);
   };
 
   return html`
@@ -214,17 +255,16 @@ function App() {
             ? html`
                 <section class="scroll-section" id="section-${d}">
                   <h2>${dayToName[d]} ${dayToDate[d]}</h2>
-                  ${bands.map((band) => {
-                    if (band.day !== d) return null;
-                    const isSelected =
-                      show === "selected" ||
-                      ids.includes(band.bandId.toString());
+                  ${(bandsByDay[d] || []).map((band) => {
+                    const isSelected = ids.includes(band.bandId.toString());
                     const conflictingBands = getConflictingBands(band);
                     const conflict = conflictingBands.length > 0;
+                    const past = isBandPast(band, now);
 
                     return html`
                       <div
-                        class="card"
+                        class="card ${past ? "card-past" : ""}"
+                        id="band-${band.bandId}"
                         key=${band.bandId}
                         onClick=${() => toggleBandSelection(band)}
                         style="cursor: pointer; border-left: 5px solid ${isSelected
@@ -271,7 +311,7 @@ function App() {
               `
             : null,
         )}
-        ${(bands.length === 0 || daysWithItems.size === 0) &&
+        ${(daysWithItems.size === 0) &&
         harmonogram.length > 0 &&
         html`<p>No bands found/selected.</p>`}
         ${harmonogram.length === 0 && html`<p>Loading harmonogram...</p>`}
