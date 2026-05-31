@@ -6,7 +6,7 @@
     --button-bg: #fff;
     --button-text: #000;
     --selected: #4caf50;
-    --conflict-bg: #ffebee;
+    --conflict-text: #bf360c;
     --selected-bg: #e8f5e9;
     --control-font-size: 16px;
     --control-font-weight: 500;
@@ -22,6 +22,7 @@
     --card-border: #333;
     --button-bg: #2d2d2d;
     --button-text: #e0e0e0;
+    --conflict-text: #ffab40;
     --conflict-bg: #3c1616;
     --selected-bg: #1b2e1b;
 }
@@ -79,17 +80,12 @@ body {
     background: var(--selected-bg);
 }
 
-.card-conflict {
-    border-left-color: #f44336;
-    background: var(--conflict-bg);
-}
-
 .card-past {
     opacity: 0.45;
 }
 
 .conflict-label {
-    color: #f44336;
+    color: var(--conflict-text);
     font-size: 0.8em;
 }
 

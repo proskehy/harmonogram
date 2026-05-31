@@ -164,6 +164,21 @@ function App() {
     });
   };
 
+  const getConflictGradient = (band, conflictingBands) => {
+    const range = getTimeRange(band);
+    const duration = range.end - range.start;
+    return conflictingBands
+      .map((other) => {
+        const otherRange = getTimeRange(other);
+        const overlapStart = Math.max(range.start, otherRange.start);
+        const overlapEnd = Math.min(range.end, otherRange.end);
+        const startPct = ((overlapStart - range.start) / duration) * 100;
+        const endPct = ((overlapEnd - range.start) / duration) * 100;
+        return `linear-gradient(to right, transparent ${startPct}%, rgba(244,67,54,0.25) ${startPct}%, rgba(244,67,54,0.25) ${endPct}%, transparent ${endPct}%)`;
+      })
+      .join(", ");
+  };
+
   const scrollToDay = (d) => {
     const el = document.getElementById(`section-${d}`);
     if (el) {
@@ -199,10 +214,10 @@ function App() {
     setTimeout(() => scrollToCurrentBand(), 0);
   };
 
-  const getCardClass = (isFavorite, conflict, past) => {
+  const getCardClass = (isFavorite, past) => {
     let cls = "card";
     if (past) cls += " card-past";
-    if (isFavorite) cls += conflict ? " card-conflict" : " card-selected";
+    if (isFavorite) cls += " card-selected";
     return cls;
   };
 
@@ -255,13 +270,17 @@ function App() {
                     const conflictingBands = getConflictingBands(band);
                     const conflict = conflictingBands.length > 0;
                     const past = isBandPast(band, now);
+                    const style = conflict
+                      ? `background-image: ${getConflictGradient(band, conflictingBands)}`
+                      : "";
 
                     return html`
                       <div
-                        class=${getCardClass(isFavorite, conflict, past)}
+                        class=${getCardClass(isFavorite, past)}
                         id="band-${band.bandId}"
                         key=${band.bandId}
                         onClick=${() => toggleFavorite(band)}
+                        style=${style}
                       >
                         <strong>${band.bandName}</strong>
                         <span
