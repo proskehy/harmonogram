@@ -219,6 +219,13 @@ function App() {
               onInput=${(e) => setSearch(e.target.value)}
               class="search-input"
             />
+            ${search &&
+            html`<button
+              class="button search-clear"
+              onClick=${() => setSearch("")}
+            >
+              ✕
+            </button>`}
           </div>
           <button
             class="button control-btn ${view === "favorites"

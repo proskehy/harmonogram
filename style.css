@@ -199,4 +199,18 @@ body {
     background-color: var(--card-bg);
     display: flex;
     gap: 2px;
+    position: relative;
+}
+
+.search-clear {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: var(--button-text);
+    font-size: 18px;
+    padding: 8px;
+    line-height: 1;
 }
