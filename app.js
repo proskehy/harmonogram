@@ -1,5 +1,10 @@
 import { h, render } from "https://esm.sh/preact";
-import { useState, useEffect, useMemo, useRef } from "https://esm.sh/preact/hooks";
+import {
+  useState,
+  useEffect,
+  useMemo,
+  useRef,
+} from "https://esm.sh/preact/hooks";
 import htm from "https://esm.sh/htm";
 
 const DAYS = [
@@ -71,6 +76,9 @@ function App() {
   const [view, setView] = useState(getViewFromUrl);
   const [darkMode, setDarkMode] = useState(getDarkModeFromUrl);
   const [search, setSearch] = useState("");
+  const [searchMatchIndex, setSearchMatchIndex] = useState(0);
+  const prevSearchRef = useRef("");
+  const prevMatchIndexRef = useRef(0);
   const [harmonogram, setHarmonogram] = useState([]);
   const [now] = useState(() => new Date());
   const hasScrolledRef = useRef(false);
@@ -123,11 +131,6 @@ function App() {
     const grouped = {};
     const filtered = harmonogram.filter((band) => {
       if (band.active === false) return false;
-
-      const matchesSearch = band.bandName
-        .toLowerCase()
-        .includes(search.toLowerCase());
-      if (!matchesSearch) return false;
 
       if (view === "favorites" && !favoriteIds.includes(band.bandId))
         return false;
@@ -208,6 +211,42 @@ function App() {
     }
   }, [harmonogram]);
 
+  useEffect(() => {
+    if (!search) {
+      setSearchMatchIndex(0);
+      prevSearchRef.current = "";
+      prevMatchIndexRef.current = 0;
+      return;
+    }
+
+    const searchChanged = search !== prevSearchRef.current;
+    const indexChanged = searchMatchIndex !== prevMatchIndexRef.current;
+
+    if (searchChanged || indexChanged) {
+      const lowerSearch = search.toLowerCase();
+      const matches = [];
+      for (const day of DAYS) {
+        const dayBands = bandsByDay[day.id];
+        if (!dayBands) continue;
+        for (const band of dayBands) {
+          if (band.bandName.toLowerCase().includes(lowerSearch)) {
+            matches.push(band.bandId);
+          }
+        }
+      }
+
+      if (matches.length > 0) {
+        const actualIndex = searchMatchIndex % matches.length;
+        const targetId = matches[actualIndex];
+        const el = document.getElementById(`band-${targetId}`);
+        if (el) el.scrollIntoView({ behavior: "instant", block: "center" });
+      }
+
+      prevSearchRef.current = search;
+      prevMatchIndexRef.current = searchMatchIndex;
+    }
+  }, [search, searchMatchIndex, bandsByDay]);
+
   const toggleView = () => {
     const nextView = view === "all" ? "favorites" : "all";
     setView(nextView);
@@ -231,7 +270,15 @@ function App() {
               type="text"
               placeholder="Search"
               value=${search}
-              onInput=${(e) => setSearch(e.target.value)}
+              onInput=${(e) => {
+                setSearch(e.target.value);
+                setSearchMatchIndex(0);
+              }}
+              onKeyDown=${(e) => {
+                if (e.key === "Enter" && search) {
+                  setSearchMatchIndex((prev) => prev + 1);
+                }
+              }}
               class="search-input"
             />
             ${search &&
@@ -267,6 +314,11 @@ function App() {
                   <h2>${day.name} ${day.date}</h2>
                   ${(bandsByDay[day.id] || []).map((band) => {
                     const isFavorite = favoriteIds.includes(band.bandId);
+                    const isMatched =
+                      search &&
+                      band.bandName
+                        .toLowerCase()
+                        .includes(search.toLowerCase());
                     const conflictingBands = getConflictingBands(band);
                     const conflict = conflictingBands.length > 0;
                     const past = isBandPast(band, now);
@@ -276,7 +328,7 @@ function App() {
 
                     return html`
                       <div
-                        class=${getCardClass(isFavorite, past)}
+                        class=${`${getCardClass(isFavorite, past)} ${isMatched ? "card-matched" : ""}`}
                         id="band-${band.bandId}"
                         key=${band.bandId}
                         onClick=${() => toggleFavorite(band)}

@@ -80,6 +80,13 @@ body {
     border-left-color: var(--selected);
 }
 
+.card-matched {
+    border-top-color: #ffeb3b !important;
+    border-right-color: #ffeb3b !important;
+    border-bottom-color: #ffeb3b !important;
+    box-shadow: 0 0 10px rgba(255, 235, 59, 0.4);
+}
+
 .card-past {
     opacity: 0.45;
 }
