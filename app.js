@@ -79,6 +79,7 @@ function App() {
   const [searchMatchIndex, setSearchMatchIndex] = useState(0);
   const prevSearchRef = useRef("");
   const prevMatchIndexRef = useRef(0);
+  const prevViewRef = useRef(view);
   const [harmonogram, setHarmonogram] = useState([]);
   const [now] = useState(() => new Date());
   const hasScrolledRef = useRef(false);
@@ -216,13 +217,15 @@ function App() {
       setSearchMatchIndex(0);
       prevSearchRef.current = "";
       prevMatchIndexRef.current = 0;
+      prevViewRef.current = view;
       return;
     }
 
     const searchChanged = search !== prevSearchRef.current;
     const indexChanged = searchMatchIndex !== prevMatchIndexRef.current;
+    const viewChanged = view !== prevViewRef.current;
 
-    if (searchChanged || indexChanged) {
+    if (searchChanged || indexChanged || viewChanged) {
       const lowerSearch = search.toLowerCase();
       const matches = [];
       for (const day of DAYS) {
@@ -239,18 +242,21 @@ function App() {
         const actualIndex = searchMatchIndex % matches.length;
         const targetId = matches[actualIndex];
         const el = document.getElementById(`band-${targetId}`);
-        if (el) el.scrollIntoView({ behavior: "instant", block: "center" });
+        if (el) el.scrollIntoView({ behavior: "instant" });
       }
 
       prevSearchRef.current = search;
       prevMatchIndexRef.current = searchMatchIndex;
+      prevViewRef.current = view;
     }
-  }, [search, searchMatchIndex, bandsByDay]);
+  }, [search, searchMatchIndex, bandsByDay, view]);
 
   const toggleView = () => {
     const nextView = view === "all" ? "favorites" : "all";
     setView(nextView);
-    setTimeout(() => scrollToCurrentBand(), 0);
+    if (!search) {
+      setTimeout(() => scrollToCurrentBand(), 0);
+    }
   };
 
   const getCardClass = (isFavorite, past) => {
