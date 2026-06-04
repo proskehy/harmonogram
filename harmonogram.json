@@ -451,14 +451,6 @@
   },
   {
     "day": 2,
-    "bandName": "Social Distortion",
-    "startTime": "14:45",
-    "endTime": "15:45",
-    "stage": "RFP",
-    "bandId": "46"
-  },
-  {
-    "day": 2,
     "bandName": "Catch Your Breath",
     "startTime": "14:45",
     "endTime": "15:30",
@@ -472,6 +464,14 @@
     "endTime": "15:35",
     "stage": "EcoFlow",
     "bandId": "83"
+  },
+  {
+    "day": 2,
+    "bandName": "Social Distortion",
+    "startTime": "15:10",
+    "endTime": "16:10",
+    "stage": "RFP",
+    "bandId": "46"
   },
   {
     "day": 2,
@@ -1259,11 +1259,20 @@
   },
   {
     "day": 4,
+    "bandName": "Headliner půda: Jak pošéfovat Rock for People",
+    "startTime": "15:35",
+    "endTime": "16:20",
+    "stage": "Reflex",
+    "bandId": "234"
+  },
+  {
+    "day": 4,
     "bandName": "Headliner: Půda",
     "startTime": "15:35",
     "endTime": "16:20",
     "stage": "Reflex",
-    "bandId": "176"
+    "bandId": "176",
+    "active": false
   },
   {
     "day": 4,
