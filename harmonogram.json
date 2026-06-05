@@ -611,11 +611,20 @@
   },
   {
     "day": 2,
+    "bandName": "Cintorinni",
+    "startTime": "20:40",
+    "endTime": "21:20",
+    "stage": "EcoFlow",
+    "bandId": "235"
+  },
+  {
+    "day": 2,
     "bandName": "Cintorini",
     "startTime": "20:40",
     "endTime": "21:20",
     "stage": "EcoFlow",
-    "bandId": "228"
+    "bandId": "228",
+    "active": false
   },
   {
     "day": 2,
