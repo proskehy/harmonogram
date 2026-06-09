@@ -117,6 +117,8 @@ body {
 }
 
 .day-button {
+    padding: 8px 4px;
+    font-size: 13px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     font-weight: var(--control-font-weight);
