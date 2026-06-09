@@ -25,6 +25,14 @@
   },
   {
     "day": 1,
+    "bandName": "Vypsaná fiXa",
+    "startTime": "11:30",
+    "endTime": "12:15",
+    "stage": "E2",
+    "bandId": "242"
+  },
+  {
+    "day": 1,
     "bandName": "Byt číslo 4",
     "startTime": "12:20",
     "endTime": "13:00",
