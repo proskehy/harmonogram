@@ -8,6 +8,7 @@ import {
 import htm from "https://esm.sh/htm";
 
 const DAYS = [
+  { id: 0, name: "Úterý", date: "9. 6.", calendarDate: 9 },
   { id: 1, name: "Středa", date: "10. 6.", calendarDate: 10 },
   { id: 2, name: "Čtvrtek", date: "11. 6.", calendarDate: 11 },
   { id: 3, name: "Pátek", date: "12. 6.", calendarDate: 12 },
@@ -52,7 +53,7 @@ function getTimeRange(band) {
 
 function getBandEndDate(band) {
   const [hours, minutes] = band.endTime.split(":").map(Number);
-  const day = DAYS[band.day - 1];
+  const day = DAYS.find((d) => d.id === band.day);
   const actualDay = hours < 6 ? day.calendarDate + 1 : day.calendarDate;
   return new Date(2026, 5, actualDay, hours, minutes);
 }
