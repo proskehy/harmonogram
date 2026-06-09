@@ -1,5 +1,29 @@
 [
   {
+    "day": 0,
+    "bandName": "Hana Lili",
+    "startTime": "20:00",
+    "endTime": "20:35",
+    "stage": "Karaoke",
+    "bandId": "236"
+  },
+  {
+    "day": 0,
+    "bandName": "Morčata na útěku",
+    "startTime": "21:15",
+    "endTime": "22:15",
+    "stage": "Karaoke",
+    "bandId": "237"
+  },
+  {
+    "day": 0,
+    "bandName": "Dave 2 Rave II: Electric Boogaloo",
+    "startTime": "22:45",
+    "endTime": "23:45",
+    "stage": "Karaoke",
+    "bandId": "238"
+  },
+  {
     "day": 1,
     "bandName": "Byt číslo 4",
     "startTime": "12:20",
@@ -1020,6 +1044,14 @@
   },
   {
     "day": 3,
+    "bandName": "Wotazník",
+    "startTime": "21:15",
+    "endTime": "22:00",
+    "stage": "Reflex",
+    "bandId": "239"
+  },
+  {
+    "day": 3,
     "bandName": "Kvietah",
     "startTime": "21:30",
     "endTime": "22:15",
@@ -1249,6 +1281,14 @@
     "endTime": "15:35",
     "stage": "RFP",
     "bandId": "143"
+  },
+  {
+    "day": 4,
+    "bandName": "Sonaata",
+    "startTime": "14:50",
+    "endTime": "15:30",
+    "stage": "EcoFlow",
+    "bandId": "240"
   },
   {
     "day": 4,
@@ -1842,6 +1882,14 @@
     "endTime": "21:45",
     "stage": "CT Art",
     "bandId": "212"
+  },
+  {
+    "day": 5,
+    "bandName": "Hand Grenade",
+    "startTime": "21:45",
+    "endTime": "22:30",
+    "stage": "Reflex",
+    "bandId": "241"
   },
   {
     "day": 5,
