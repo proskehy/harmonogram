@@ -33,6 +33,14 @@
   },
   {
     "day": 1,
+    "bandName": "Gufrau",
+    "startTime": "11:35",
+    "endTime": "12:15",
+    "stage": "EcoFlow",
+    "bandId": "243"
+  },
+  {
+    "day": 1,
     "bandName": "Byt číslo 4",
     "startTime": "12:20",
     "endTime": "13:00",
@@ -1477,19 +1485,28 @@
   },
   {
     "day": 4,
+    "bandName": "Silent Planet",
+    "startTime": "20:50",
+    "endTime": "21:50",
+    "stage": "RFP",
+    "bandId": "153"
+  },
+  {
+    "day": 4,
     "bandName": "blackbear",
     "startTime": "20:50",
     "endTime": "21:50",
     "stage": "RFP",
-    "bandId": "146"
+    "bandId": "146",
+    "active": false
   },
   {
     "day": 4,
-    "bandName": "Silent Planet",
-    "startTime": "20:50",
+    "bandName": "Comastatic",
+    "startTime": "21:05",
     "endTime": "21:50",
     "stage": "E2",
-    "bandId": "153"
+    "bandId": "244"
   },
   {
     "day": 4,
