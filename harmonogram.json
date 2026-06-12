@@ -25,6 +25,14 @@
   },
   {
     "day": 1,
+    "bandName": "Gufrau",
+    "startTime": "10:10",
+    "endTime": "10:50",
+    "stage": "Karaoke",
+    "bandId": "243"
+  },
+  {
+    "day": 1,
     "bandName": "Vypsaná fiXa",
     "startTime": "11:30",
     "endTime": "12:15",
@@ -351,6 +359,14 @@
     "endTime": "02:00",
     "stage": "CT Art",
     "bandId": "30"
+  },
+  {
+    "day": 2,
+    "bandName": "Die Spitz",
+    "startTime": "10:10",
+    "endTime": "10:50",
+    "stage": "Karaoke",
+    "bandId": "13"
   },
   {
     "day": 2,
@@ -721,6 +737,14 @@
     "endTime": "00:00",
     "stage": "CT Art",
     "bandId": "72"
+  },
+  {
+    "day": 2,
+    "bandName": "TX2",
+    "startTime": "23:00",
+    "endTime": "23:45",
+    "stage": "EcoFlow",
+    "bandId": "26"
   },
   {
     "day": 2,
