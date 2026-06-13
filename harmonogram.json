@@ -780,6 +780,14 @@
   },
   {
     "day": 3,
+    "bandName": "P/\\ST",
+    "startTime": "10:10",
+    "endTime": "10:50",
+    "stage": "Karaoke",
+    "bandId": "245"
+  },
+  {
+    "day": 3,
     "bandName": "30 Ro(c)ků for People",
     "startTime": "11:20",
     "endTime": "12:20",
