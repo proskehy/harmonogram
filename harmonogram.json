@@ -1212,6 +1212,14 @@
   },
   {
     "day": 4,
+    "bandName": "Sunborn",
+    "startTime": "10:10",
+    "endTime": "10:50",
+    "stage": "Karaoke",
+    "bandId": "246"
+  },
+  {
+    "day": 4,
     "bandName": "Svatba Jiřího Káry (Remastered)",
     "startTime": "11:15",
     "endTime": "12:00",
