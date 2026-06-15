@@ -1902,11 +1902,20 @@
   },
   {
     "day": 5,
+    "bandName": "THE HARA",
+    "startTime": "19:20",
+    "endTime": "20:20",
+    "stage": "E2",
+    "bandId": "247"
+  },
+  {
+    "day": 5,
     "bandName": "Alexisonfire",
     "startTime": "19:20",
     "endTime": "20:20",
     "stage": "E2",
-    "bandId": "199"
+    "bandId": "199",
+    "active": false
   },
   {
     "day": 5,
